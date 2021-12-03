@@ -1,0 +1,10 @@
+.cta{
+    background: rgb(95,100,255);
+    background: linear-gradient(90deg, rgba(95,100,255,0.7) 0%, rgba(174,78,255,0.85) 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    width: fit-content;
+    padding: 0 10px;
+}
