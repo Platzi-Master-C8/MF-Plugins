@@ -1,0 +1,15 @@
+.userMain {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 710px;
+    height: 111px;
+    padding: 0;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.33);
+}
+
+article > h1 {
+    margin-left: 0;
+}
