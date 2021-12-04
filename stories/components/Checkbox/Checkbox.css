@@ -1,4 +1,5 @@
 .checkbox-container {
+    position: relative;
     width: 175px;
     display: flex;
     align-items: center;
@@ -7,7 +8,50 @@
     font-family: sans-serif;
 }
 
-.checkbox-container > input[type="checkbox"] {
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.styledCheckbx{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
     width: 16px;
     height: 16px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+input[type="checkbox"]:checked ~ .styledCheckbx{
+    background: rgb(95,100,255);
+    background: linear-gradient(90deg, rgba(95,100,255,0.7) 0%, rgba(174,78,255,0.85) 100%);
+    border: none;
+}
+
+.styledCheckbx:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Display checkmark when checked */
+input[type="checkbox"]:checked ~ .styledCheckbx:after {
+    display: block;
+}
+
+/* Styling the checkmark using webkit */
+/* Rotated the rectangle by 45 degree and 
+showing only two border to make it look
+like a tickmark */
+.styledCheckbx:after {
+    top: 1;
+    left: 4;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

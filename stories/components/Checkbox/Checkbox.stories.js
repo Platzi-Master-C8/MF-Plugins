@@ -11,9 +11,9 @@ const Template = args => <Checkbox {...args} />;
 const Default = Template.bind({});
 Default.args = {
     divClass: "checkbox-container",
-    id: "checkbx",
-    name: "Development time",
+    name: "Development timer",
     checked: true,
+    stylizedClass: "styledCheckbx"
 }
 
 export { Default };
