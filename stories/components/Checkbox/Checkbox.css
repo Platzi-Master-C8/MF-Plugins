@@ -1,0 +1,13 @@
+.checkbox-container {
+    width: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+    font-family: sans-serif;
+}
+
+.checkbox-container > input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
