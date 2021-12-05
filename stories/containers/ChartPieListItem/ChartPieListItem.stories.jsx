@@ -2,7 +2,7 @@ import React from "react";
 import { ChartPieListItem } from './ChartPieListItem';
 
 export default {
-    title: 'Containers/ChartPieListItem',
+    title: 'Containers/Chart Pie List Item',
     component: ChartPieListItem,
 }
 

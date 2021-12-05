@@ -1,12 +1,13 @@
 .ChartPieListItem {
     display: flex;
+    flex-direction: column;
     padding: 0;
     list-style: none;
 }
 
-.ChartPieItem-item {
+.ChartPieListItem > li {
     display: flex;
-    margin: 0 20px;
+    margin: 3px 0;
 }
 
 .ChartPieItem-color {
