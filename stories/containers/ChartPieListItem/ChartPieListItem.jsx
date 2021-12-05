@@ -1,24 +1,23 @@
 import React from 'react';
+import { ChartPieItem } from '../../components/ChartPieItem/ChartPieItem';
+
+import "../../globals.css";
 import './ChartPieListItem.css';
 
+
+const args = {
+    name: "Rust",
+    percentage: "45%",
+}
 
 export const ChartPieListItem = () => {
 
     return (
         <>
             <ul className="ChartPieListItem">
-                <li className="ChartPieItem-item">
-                    <div className="ChartPieItem-color"></div>
-                    <span className="ChartPieItem-text">item</span>    
-                </li>
-                <li className="ChartPieItem-item">
-                    <div className="ChartPieItem-color"></div>
-                    <span className="ChartPieItem-text">item</span>    
-                </li>
-                <li className="ChartPieItem-item">
-                    <div className="ChartPieItem-color"></div>
-                    <span className="ChartPieItem-text">item</span>    
-                </li>
+                <ChartPieItem {...args} />
+                <ChartPieItem {...args} />
+                <ChartPieItem {...args} />
             </ul>
         </>
     )
