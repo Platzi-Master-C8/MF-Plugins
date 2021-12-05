@@ -46,7 +46,7 @@ showing only two border to make it look
 like a tickmark */
 .styledCheckbx:after {
     top: 1;
-    left: 4;
+    left: 4px;
     width: 5px;
     height: 9px;
     border: solid white;
