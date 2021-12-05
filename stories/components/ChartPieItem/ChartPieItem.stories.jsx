@@ -13,6 +13,7 @@ const Template = (args) => <ChartPieItem {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
-    name: "item",
+    name: "Rust",
     color: "#8A2BE2",
+    percentage: "25%",
 }

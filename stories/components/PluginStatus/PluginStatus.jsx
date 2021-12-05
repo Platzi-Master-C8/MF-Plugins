@@ -1,4 +1,5 @@
 import React from "react";
+import "../../globals.css";
 import "./PluginStatus.css";
 
 import Checked from "../../assets/checked.svg";
