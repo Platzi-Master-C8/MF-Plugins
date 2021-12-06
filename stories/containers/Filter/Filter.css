@@ -1,0 +1,11 @@
+.filter{
+    width: fit-content;
+    padding: 20px;
+    box-shadow: 3px 3px 20px rgba(0,0,0,0.2);
+}
+.checkboxes{
+    padding: 10px 0;
+}
+.ChartButton{
+    width: 100%;
+}
