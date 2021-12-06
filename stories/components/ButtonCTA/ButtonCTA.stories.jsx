@@ -12,7 +12,6 @@ const Template = args => <ButtonCTA {...args}/>;
 const Default = Template.bind({});
 Default.args = {
     name: "Install Now!",
-    className: "cta",
 };
 
 export { Default };
