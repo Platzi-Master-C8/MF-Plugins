@@ -46,6 +46,13 @@
   font-family: 'Mulish', sans-serif;
 }
 
+.dunnut.loading {
+  position: relative;
+  padding: 0;
+  width: 350px;
+  height: 200px;
+}
+
 .donnutChart {
   /* z-index: 1; */
   width: 210px;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -15,7 +14,7 @@ export const data = {
     {
       label: 'time develop',
       data: [75, 25],
-      backgroundColor: ['#AE4EFF', '#555BFF'],
+      backgroundColor: ['#AE4EFF', '#fff'],
       borderWidth: 0,
     },
   ],
@@ -34,31 +33,36 @@ export const options = {
   },
 };
 
-export const ChartHalfDoughtnut = ({}) => {
+export const ChartHalfDoughtnut = ({ loading }) => {
   return (
     <>
-      <div className="donnutChart-container">
-        <div class="chart-title">
-          <h2>
-            Thu Nov 12th <span>3 hrs 00 mins</span>
-          </h2>
+      {loading ? (
+        <section className="dunnut loading">
+          <Skeleton
+            containerClassName="loading-skeletonContainer"
+            className="skeleton-item"
+          />
+        </section>
+      ) : null}
+
+      {!loading ? (
+        <div className="donnutChart-container">
+          <div class="chart-title">
+            <h2>
+              Thu Nov 12th <span>3 hrs 00 mins</span>
+            </h2>
+          </div>
+          <div className="donnutChart">
+            <Doughnut data={data} options={options} />
+          </div>
+          <p class="percent">86%</p>
+          <p class="average">
+            Daily Average: <span>3 hrs 33 mins</span>
+          </p>
         </div>
-        <div className="donnutChart">
-          <Doughnut data={data} options={options} />
-        </div>
-        <p class="percent">86%</p>
-        <p class="average">
-          Daily Average: <span>3 hrs 33 mins</span>
-        </p>
-      </div>
+      ) : null}
     </>
   );
 };
 
-// UserMain.propTypes = {
-//   userName: PropTypes.string,
-//   currentToken: PropTypes.string,
-//   loading: PropTypes.bool,
-//   errorInGetLogin: PropTypes.bool,
-//   getToken: PropTypes.func,
-// };
+ChartHalfDoughtnut.propTypes = {};

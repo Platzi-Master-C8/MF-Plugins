@@ -14,7 +14,7 @@ const OperativeSystem = ({ system, systemLogo, loading }) => {
   return (
     <>
       {loading ? (
-        <section className="UserProject loading">
+        <section className="OperativeSystem loading">
           <Skeleton
             containerClassName="loading-skeletonContainer"
             className="skeleton-item"
