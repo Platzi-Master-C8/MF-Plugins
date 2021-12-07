@@ -4,16 +4,25 @@
     justify-content: space-between;
     width: 710px;
     height: 111px;
-    padding: 0;
+    padding: 20px;
     /* border: 1px solid black; */
     border-radius: 5px;
     box-shadow: 3px 3px 20px rgba(0,0,0,0.20);
-    padding: 0 19px;
     box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
 }
 
-article > h1 {
-    margin-left: 0;
+.userMain-container > h1 {
+    flex-grow: 2;
+    margin: 0 0 10px 5px;
+    font-size: 31px;
+    font-weight: 800;
+}
+
+.userMain-container > p {
+    margin: 0 5px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .userMain.loading{
@@ -29,7 +38,25 @@ article > h1 {
 
 .skeleton-item {
     position: relative;
-    top: -5px;
+    top: -3px;
     width: 100%;
     height: 100%;
 }
+
+.userMain-errorMessage {
+    color: red;
+}
+
+.loader {
+    border: 5px solid #f3f3f3; 
+    border-top: 5px solid #B66CFF; 
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

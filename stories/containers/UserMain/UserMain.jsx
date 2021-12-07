@@ -1,37 +1,40 @@
 import React from 'react';
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
-import './UserMain.css';
+import PropTypes from 'prop-types';
 import { Button } from '../../components/Button/Button';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import '../../globals.css';
+import './UserMain.css';
 
-export const UserMain = ({ name, currentToken, getToken, loading, error }) => {
+export const UserMain = ({ userName, currentToken, loading, LoadingGetToken, errorInGetLogin, getToken }) => {
 
     return (
         <>
             {
-                loading && !error ? 
+                loading ? 
                 <section className="userMain loading">
                     <Skeleton containerClassName="loading-skeletonContainer" className="skeleton-item"/>
                 </section> :
                 null
             }
             {
-                error && !loading?
-                <section className="userMain error">
-                    <article>
-                        <h1>Welcome back, user</h1>
-                        <p>something is wrong</p>
-                    </article>
-                </section> :
-                null
-            }
-            {
-                !loading && !error ? 
+                !loading ? 
                 <section className="userMain">
-                    <article>
-                        <h1>Welcome back, {name}</h1>
+                    <article className="userMain-container">
+                        <h1>Welcome back, {userName}</h1>
                         <p>Your current token is: {currentToken}</p>
+                        {
+                            errorInGetLogin ? 
+                            <p className="userMain-errorMessage">We has a problem, please try again later</p> : 
+                            null
+                        }
                     </article>
+
+                    {
+                        LoadingGetToken ?
+                        <div class="loader"></div> :
+                        null
+                    }
                     <Button name="Get New Token" onClick={getToken}/>
                 </section> : 
                 null
@@ -39,3 +42,13 @@ export const UserMain = ({ name, currentToken, getToken, loading, error }) => {
         </>
     )
 }
+
+
+UserMain.propTypes = {
+    userName: PropTypes.string,
+    currentToken: PropTypes.string,
+    loading: PropTypes.bool,
+    errorInGetLogin: PropTypes.bool,
+    getToken: PropTypes.func,
+};
+  

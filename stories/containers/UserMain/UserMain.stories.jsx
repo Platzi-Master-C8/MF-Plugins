@@ -14,19 +14,29 @@ const Template = (args) => <UserMain {...args} />
 export const Default = Template.bind({})
 Default.args = {
     loading: false,
-    error: false,
-    name: "Jito",
+    errorInGetLogin: false,
+    userName: "Jito",
     currentToken: "superhyperextremefuckingtoken"
 }
 
 export const Loading = Template.bind({})
 Loading.args = {
     loading: true,
-    error: false
+    errorInGetLogin: false,
 }
 
-export const Error = Template.bind({})
-Error.args = {
+export const LoadingGetToken = Template.bind({})
+LoadingGetToken.args = {
     loading: false,
-    error: true
+    LoadingGetToken: true,
+    errorInGetLogin: false,
+    userName: "Jito",
+    currentToken: "superhyperextremefuckingtoken"
+}
+
+export const ErrorInGetLogin = Template.bind({})
+ErrorInGetLogin.args = {
+    ...Default.args,
+    loading: false,
+    errorInGetLogin: true
 } 
