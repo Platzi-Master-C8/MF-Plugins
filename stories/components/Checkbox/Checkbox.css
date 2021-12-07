@@ -4,8 +4,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 17px;
-    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Mulish', sans-serif;
 }
 
 input[type="checkbox"] {

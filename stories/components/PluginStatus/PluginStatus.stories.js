@@ -10,11 +10,15 @@ const Template = args => <PluginStatus {...args} />;
 
 const Default = Template.bind({});
 Default.args = {
-    classContainer: "plugin-status",
+    loading: false,
     date: new Date(2021, 11, 4, 5).toLocaleString("en-US", {weekday: "long", hour: "numeric"}),
     title: "Plugin Status",
     text: "Last tracking:",
-    iconClass: "plugin-status__icon",
 }
 
-export { Default };
+const Loading = Template.bind({});
+Loading.args = {
+    loading: true,
+}
+
+export { Default, Loading };
