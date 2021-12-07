@@ -1,10 +1,10 @@
 import React from "react";
 import Repository from "./Repository";
 
-export default {
-    title: "Containers/Repository",
-    component: Repository,
-}
+// export default {
+//     title: "Containers/Repository",
+//     component: Repository,
+// }
 
 const Template = args => <Repository {...args} />;
 

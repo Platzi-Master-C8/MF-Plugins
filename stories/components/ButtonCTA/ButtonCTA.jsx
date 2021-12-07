@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./ButtonCTA.css";
 
@@ -10,3 +11,7 @@ const ButtonCTA = ({ name }) => (
 );
 
 export default ButtonCTA;
+
+ButtonCTA.propTypes = {
+    name: PropTypes.string,
+}
