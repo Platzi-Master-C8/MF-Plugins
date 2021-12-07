@@ -10,4 +10,9 @@ const Template = args => <Filter {...args} />;
 
 const Default = Template.bind({});
 
-export { Default };
+const Loading = Template.bind({});
+Loading.args = {
+    loading: true,
+}
+
+export { Default, Loading };
