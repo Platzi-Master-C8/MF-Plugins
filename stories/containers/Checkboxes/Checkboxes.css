@@ -1,6 +1,7 @@
 .checkboxes > h2{
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 600;
+    font-family: 'Mulish', sans-serif;
     margin-bottom: 16px;
 }
 .checkbox-container{
