@@ -1,8 +1,0 @@
-out
-dist
-node_modules
-.vscode-test/
-*.vsix
-*-lock.json
-.DS_Store
-*-lock.json
