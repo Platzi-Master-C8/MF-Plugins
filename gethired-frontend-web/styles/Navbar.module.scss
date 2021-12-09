@@ -1,0 +1,13 @@
+header{
+  padding-bottom: 2px;
+  background: $main-gradient;
+
+  div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 17px;
+    background-color: $bgColor;
+  }
+}

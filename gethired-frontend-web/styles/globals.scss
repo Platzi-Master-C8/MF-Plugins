@@ -1,8 +1,15 @@
-$bgColor: red;
+$bgColor: #fff;
+$main-gradient: linear-gradient(90deg, rgba(95,100,255,0.7) 0%, rgba(174,78,255,0.85) 100%);
 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   background-color: $bgColor;
 }
 
 
 @import '../styles/Home.module.scss';
+@import '../styles/Navbar.module.scss';
