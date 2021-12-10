@@ -1,8 +1,25 @@
-$colorDePrueba: rgb(130, 57, 179);
+$colorDePrueba: rgb(255, 255, 255);
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background-color: $colorDePrueba;
 }
 
 
-@import '../styles/Home.module.scss';
+@import './components/PluginStatus.scss';
+@import './components/Button.scss';
+@import './components/Checkbox.scss';
+@import './components/ChartButton.scss';
+
+@import './containers/UserMain.scss';
+@import './containers/Filter.scss';
+@import './containers/Checkboxes.scss';
+
+
+@import './pages/adminView.scss'

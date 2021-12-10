@@ -1,0 +1,15 @@
+.getToken-button {
+    width: 165px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #F8F8F8;
+    border: 1px solid #555BFF;
+    font-size: 16px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+}
+
+.getToken-button:hover {
+    background-color: #555BFF;
+    color: white;
+}
