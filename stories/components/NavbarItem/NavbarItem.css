@@ -1,0 +1,15 @@
+.NavItem-container {
+  width: 100px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navItem--p {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Mulish', sans-serif;
+}
