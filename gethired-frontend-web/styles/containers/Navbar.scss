@@ -7,6 +7,13 @@
   padding: 0 20px;
   border-bottom: 2px solid #ae4eff;
 }
+.menu--container{
+  display: flex;
+
+  .navbar__profile{
+    margin-left: 16px;
+  }
+}
 
 .navbar__logo img {
   max-width: 130px;

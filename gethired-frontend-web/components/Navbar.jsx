@@ -7,25 +7,28 @@ import NavBarItem from "./NavBarItem";
 const Navbar = ({}) => {
   return (
     <>
-      <div className="navbar--container">
-        <div className="navbar__logo">
+      <section className="navbar--container">
+        <article className="navbar__logo">
           <Image src={Logo} />
-        </div>
-        <div className="navbar__menu">
-          <NavBarItem section="Messages" />
-          <NavBarItem section="Notifications" />
-          <NavBarItem section="Forum" />
-          <NavBarItem section="Jobs" />
-          <NavBarItem section="Blogpost" />
-          <NavBarItem section="My Website" />
-        </div>
-        <div className="navbar__ham--menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div className="navbar__profile">R</div>
-      </div>
+        </article>
+
+        <section className='menu--container'>
+          <div className="navbar__menu">
+            <NavBarItem section="Messages" />
+            <NavBarItem section="Notifications" />
+            <NavBarItem section="Forum" />
+            <NavBarItem section="Jobs" />
+            <NavBarItem section="Blogpost" />
+            <NavBarItem section="My Website" />
+          </div>
+          <div className="navbar__ham--menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div className="navbar__profile">R</div>
+        </section>
+      </section>
     </>
   );
 };
