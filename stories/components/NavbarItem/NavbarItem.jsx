@@ -3,14 +3,20 @@ import PropTypes from 'prop-types';
 import '../../globals.css';
 import './NavbarItem.css';
 
-import iconPlugin from '../../assets/icon-plugin.svg';
-import iconExtension from '../../assets/icon-extension.svg';
-import iconSocial from '../../assets/icon-social.svg';
+import iconMessages from '../../assets/icon-messages.svg';
+import iconNotification from '../../assets/icon-notification.svg';
+import iconForum from '../../assets/icon-forum.svg';
+import iconJobs from '../../assets/icon-jobs.svg';
+import iconBlog from '../../assets/icon-blog.svg';
+import iconWebsite from '../../assets/icon-website.svg';
 
 const NavbarItem = ({ section, sectionIcon }) => {
-  section == 'Plug-in' ? (sectionIcon = iconPlugin) : null;
-  section == 'Social' ? (sectionIcon = iconSocial) : null;
-  section == 'Extension' ? (sectionIcon = iconExtension) : null;
+  section == 'Messages' ? (sectionIcon = iconMessages) : null;
+  section == 'Notifications' ? (sectionIcon = iconNotification) : null;
+  section == 'Forum' ? (sectionIcon = iconForum) : null;
+  section == 'Jobs' ? (sectionIcon = iconJobs) : null;
+  section == 'Blogpost' ? (sectionIcon = iconBlog) : null;
+  section == 'My Website' ? (sectionIcon = iconWebsite) : null;
 
   return (
     <>

@@ -8,7 +8,14 @@ export default {
     section: {
       control: {
         type: 'select',
-        options: ['Plug-in', 'Social', 'Extension'],
+        options: [
+          'Messages',
+          'Notifications',
+          'Forum',
+          'Jobs',
+          'Blogpost',
+          'My Website',
+        ],
       },
     },
   },
