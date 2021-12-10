@@ -1,0 +1,21 @@
+.path{
+  display: flex;
+  font-family: 'Mulish', sans-serif;
+
+  &__item{
+    display: grid;
+    place-content: center;
+    font-size: 21px;
+    width: 38px;
+    height: 38px;
+    margin: 0 20px;
+
+    color: white;
+    border-radius: 50%;
+    background-color: $colorUnactive;
+  }
+}
+
+.active{
+  background: $mainGradient;
+}

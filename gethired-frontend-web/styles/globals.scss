@@ -1,4 +1,6 @@
 $colorDePrueba: rgb(255, 255, 255);
+$mainGradient: linear-gradient(90deg, rgba(95,100,255,0.7) 0%, rgba(174,78,255,0.85) 100%);
+$colorUnactive: #ABA9A9;
 
 
 * {
@@ -17,6 +19,7 @@ body {
 @import './components/Checkbox.scss';
 @import './components/ChartButton.scss';
 @import './components/NavBarItem.scss';
+@import './components/Path.scss';
 
 @import './containers/UserMain.scss';
 @import './containers/Filter.scss';
