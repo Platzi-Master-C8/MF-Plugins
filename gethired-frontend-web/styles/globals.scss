@@ -20,6 +20,7 @@ body {
 @import './components/ChartButton.scss';
 @import './components/NavBarItem.scss';
 @import './components/Path.scss';
+@import './components/ButtonCTA.scss';
 
 @import './containers/UserMain.scss';
 @import './containers/Filter.scss';
@@ -27,4 +28,5 @@ body {
 @import './containers/Navbar.scss';
 
 
-@import './pages/adminView.scss'
+@import './pages/adminView.scss';
+@import './pages/home.scss'

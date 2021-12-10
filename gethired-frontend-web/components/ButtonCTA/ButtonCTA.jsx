@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./ButtonCTA.css";
+// import "./ButtonCTA.css";
 
 
 const ButtonCTA = ({ name }) => (
