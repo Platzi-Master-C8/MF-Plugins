@@ -1,6 +1,16 @@
 .path{
+  position: relative;
   display: flex;
+  width: fit-content;
   font-family: 'Mulish', sans-serif;
+
+  hr{
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 100%;
+    z-index: -1;
+  }
 
   &__item{
     display: grid;
@@ -10,9 +20,13 @@
     height: 38px;
     margin: 0 20px;
 
-    color: white;
     border-radius: 50%;
     background-color: $colorUnactive;
+    
+    a{
+      color: white;
+      text-decoration: none;
+    }
   }
 }
 

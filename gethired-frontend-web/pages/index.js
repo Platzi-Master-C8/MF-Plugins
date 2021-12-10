@@ -10,7 +10,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Path />
+      <Path active={1}/>
     </main>
   )
   
