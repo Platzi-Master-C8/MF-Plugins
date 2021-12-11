@@ -8,24 +8,54 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const args1 = {
     title: "Data to show",
-    props: {
-        name: "Lenguages",
-        checked: true,
-    }
+    props: [
+        {
+            name: "Development time",
+            checked: true,
+        },
+        {
+            name: "Languages",
+            checked: true,
+        },
+        {
+            name: "Projects worked",
+            checked: true,
+        },
+        {
+            name: "Operative system",
+            checked: true,
+        }
+    ]
 }
 
 const args2 = {
     title: "Data to track",
-    props: {
-        name: "Time programming",
-        checked: true,
-    }
+    props: [
+        {
+            name: "Development time",
+            checked: true,
+        },
+        {
+            name: "Languages",
+            checked: true,
+        },
+        {
+            name: "Projects worked",
+            checked: true,
+        },
+        {
+            name: "Operative system",
+            checked: true,
+        }
+    ]
 }
+
+
 
 const Filter = ({ loading }) => (
     <React.Fragment>
         {
-            loading?
+            loading ?
             <section className="loading">
                 <Skeleton containerClassName="loading-skeletonContainer" className="skeleton-item"/>
             </section> :
@@ -34,8 +64,8 @@ const Filter = ({ loading }) => (
         {
             !loading ?
             <section className="filter">
-                <Checkboxes {...args1}/>
-                <Checkboxes {...args2}/>
+                <Checkboxes {...args1} onChecked={() => console.log('check')}/>
+                <Checkboxes {...args2} onChecked={() => console.log('check')}/>
                 <ChartButton />
             </section> :
             null

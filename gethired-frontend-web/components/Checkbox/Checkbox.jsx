@@ -1,13 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import "./Checkbox.css";
 
-const Checkbox = ({ name, checked }) => (
+const Checkbox = ({ name, checked, onChecked }) => (
     <div className="checkbox">
         <label>
             { name }
             <div className="checkbox-container">
-                <input type="checkbox" checked={ checked } />
+                <input 
+                    type="checkbox" 
+                    // checked={ checked } 
+                    defaultChecked={true}
+                    // onClick={onChecked}
+                />
                 <span className="styledCheckbx"></span>
             </div>
         </label>

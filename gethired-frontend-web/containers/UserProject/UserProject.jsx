@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import '../../globals.css';
-import './UserProject.css';
+
 
 export const UserProject = ({ projectName, description, loading, gitHubRepo }) => {
 

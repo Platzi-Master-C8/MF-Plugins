@@ -1,0 +1,71 @@
+.percent {
+  font-size: 18px;
+}
+
+.average {
+  font-size: 24px;
+}
+
+.chart-title {
+  align-self: center;
+  position: relative;
+  z-index: 10;
+}
+
+.chart-title h2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.chart-title span {
+  font-size: 14px;
+  color: gray;
+}
+
+.average {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.average span {
+  font-size: 16px;
+  color: gray;
+}
+
+.donnutChart-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+}
+
+.dunnut.loading {
+  position: relative;
+  padding: 0;
+  width: 350px;
+  height: 200px;
+}
+
+.donnutChart {
+  width: 210px;
+  height: 90px;
+  position: relative;
+  top: -40px;
+}
+
+
+@media (min-width: 1000px) {
+  .donnutChart-container  {
+      width: 345px;
+      height: 191px;
+  }
+
+  
+}

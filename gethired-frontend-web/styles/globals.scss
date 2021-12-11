@@ -16,10 +16,18 @@ body {
 @import './components/Button.scss';
 @import './components/Checkbox.scss';
 @import './components/ChartButton.scss';
+@import './components/ChartPieItem.scss';
+
 
 @import './containers/UserMain.scss';
 @import './containers/Filter.scss';
 @import './containers/Checkboxes.scss';
+@import './containers/ChartHalfDoughtnut.scss';
+@import './containers/BarChart.scss';
+@import './containers/ChartPie.scss';
+@import 'containers/ChartPieListItem.scss';
+@import './containers/UserProject.scss';
+@import 'containers/OperativeSystem.scss';
 
 
 @import './pages/adminView.scss'
