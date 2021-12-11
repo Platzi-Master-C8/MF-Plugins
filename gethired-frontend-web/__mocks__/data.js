@@ -1,7 +1,7 @@
-const users = {
-  "firstVictim": {
+const user = {
     id: 105,
     name: "Jito",
+    token: "superhyperextremefuckingtoken",
     projects: [
       {
         id: 1,
@@ -70,7 +70,7 @@ const users = {
       ],
     },
     plugin: {
-      lastTracking: new Date(11, 4, 3, 15),
+      lastTracking: "09-12-2021",
       dataTrack: {
         time: true,
         languages: true,
@@ -84,7 +84,6 @@ const users = {
         os: true
       }
     }
-  }
 }
 
-export default users;
+export default user;

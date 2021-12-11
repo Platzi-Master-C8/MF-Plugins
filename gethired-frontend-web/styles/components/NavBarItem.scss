@@ -1,0 +1,25 @@
+.NavItem-container {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.navItem--p {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Mulish', sans-serif;
+  // justify-items: ;
+}
+
+@media (max-width: 940px) {
+  .NavItem-container {
+    width: 90px;
+  }
+  .navItem--icon img {
+    max-width: 25px;
+  }
+}

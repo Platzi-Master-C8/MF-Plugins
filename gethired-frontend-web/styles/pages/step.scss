@@ -1,0 +1,28 @@
+.main__content-step{
+  justify-content: space-between;
+  
+  *{
+    margin: 20px 0;  
+  }
+
+  @extend .main__content;
+}
+
+.four{
+  min-height: 400px;
+  justify-content: space-between;
+
+  & > article{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
+
+.five > article{
+  width: 100%;
+  display: flex;
+  margin: 30px 0;
+  align-items: center;
+  justify-content: space-between;
+}

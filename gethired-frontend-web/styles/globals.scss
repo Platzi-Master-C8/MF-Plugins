@@ -1,8 +1,34 @@
-$colorDePrueba: rgb(130, 57, 179);
+$colorDePrueba: rgb(255, 255, 255);
+$mainGradient: linear-gradient(90deg, rgba(95,100,255,1) 0%, rgba(174,78,255,1) 100%);
+$colorUnactive: #ABA9A9;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background-color: $colorDePrueba;
 }
 
 
-@import '../styles/Home.module.scss';
+@import './components/PluginStatus.scss';
+@import './components/Button.scss';
+@import './components/Checkbox.scss';
+@import './components/ChartButton.scss';
+@import './components/NavBarItem.scss';
+@import './components/Path.scss';
+@import './components/ButtonCTA.scss';
+@import './components/Advantage.scss';
+
+@import './containers/UserMain.scss';
+@import './containers/Filter.scss';
+@import './containers/Checkboxes.scss';
+@import './containers/Navbar.scss';
+
+
+@import './pages/adminView.scss';
+@import './pages/home.scss';
+@import './pages/step.scss';

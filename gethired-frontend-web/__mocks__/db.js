@@ -6,9 +6,10 @@ class Database {
   constructor() {}
 
   async getAll() {
-    const asArray = Object.values(allData)
+    // const asArray = Object.values(allData)
+    const data = allData
     await randomDelay()
-    return asArray
+    return data
   }
 
   async getById(id) {
