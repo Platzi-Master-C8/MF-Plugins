@@ -1,0 +1,8 @@
+.main__content-step{
+  justify-content: space-between;
+  
+  *{
+    margin: 20px 0;  
+  }
+  @extend .main__content;
+}
