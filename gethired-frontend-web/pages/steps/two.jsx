@@ -10,7 +10,7 @@ const Step2 = () => (
       In order to start tracking your data, you must have a token to GH-Code Tracking to identify your account. You can get that token in the below button
       </p>
 
-      <Link href="/steps/two">
+      <Link href="/steps/three">
         <a>
           <ButtonCTA name="Get your token" />
         </a>

@@ -4,5 +4,17 @@
   *{
     margin: 20px 0;  
   }
+
   @extend .main__content;
+}
+
+.four{
+  min-height: 400px;
+  justify-content: space-between;
+
+  & > article{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
 }
