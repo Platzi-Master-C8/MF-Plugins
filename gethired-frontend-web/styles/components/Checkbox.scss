@@ -32,7 +32,7 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked ~ .styledCheckbx{
     background: rgb(95,100,255);
-    background: linear-gradient(90deg, rgba(95,100,255,0.7) 0%, rgba(174,78,255,0.85) 100%);
+    background: $mainGradient;
     border: none;
 }
 
