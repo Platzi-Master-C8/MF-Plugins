@@ -56,7 +56,29 @@ const user = {
             barThickness: 32
           }
         ]
-      }
+      },
+      usedLenguages: [
+        {
+          name: "JS",
+          value: 12.5,
+        },
+        {
+          name: "Rust",
+          value: 25,
+        },
+        {
+          name: "php",
+          value: 25,
+        },
+        {
+          name: "Java",
+          value: 12.5,
+        },
+        {
+          name: "Python",
+          value: 25,
+        },
+    ]
     },
     average: {
       labels: ['Today', 'Daily Average'],

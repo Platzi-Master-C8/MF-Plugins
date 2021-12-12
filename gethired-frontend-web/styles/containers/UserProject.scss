@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 710px;
-    height: 111px;
+    width: 100%;
+    height: fit-content;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 3px 3px 20px rgba(0,0,0,0.20);
@@ -14,28 +14,26 @@
 
 .UserProject-container {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
 }
 
 .UserProject-title {
-    /* flex-grow: 2; */
-    width: 500px;
-    margin: 0 0 10px 0;
+    width: 100%;
     font-size: 21px;
     font-weight: 600;
 }
 
 .UserProject-description {
-    width: 500px;
-    margin: 0;
+    width: 100%;
+    margin: 15px 0;
     font-size: 14px;
     font-weight: 400;
 }
 
 .UserProject-button {
-    width: 140px;
+    width: 100%;
     height: 42px;
     border: none;
     color: white;
@@ -64,4 +62,33 @@
     top: -2px;
     width: 100%;
     height: 100%;
+}
+
+
+@media (min-width: 1000px) {
+    .UserProject {
+        width: 710px;
+    }
+    
+    .UserProject-container {
+        flex-direction: row;
+        align-items: center;
+
+    }
+    
+    .UserProject-title {
+        flex-grow: 2;
+        width: 500px;
+
+    }
+    
+    .UserProject-description {
+        width: 500px;
+    }
+    
+    .UserProject-button {
+        width: 140px;
+    }
+
+
 }

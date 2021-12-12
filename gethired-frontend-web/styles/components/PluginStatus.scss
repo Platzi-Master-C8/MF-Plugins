@@ -40,3 +40,15 @@
     width: 224px;
     height: 94px;
 }
+
+
+@media (min-width: 1000px) {
+    .plugin-status {
+        width: 224px;
+        height: 111px;
+    }
+
+    .plugin-description div {
+        flex-direction: column;
+    }
+}

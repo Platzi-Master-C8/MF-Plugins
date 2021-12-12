@@ -22,11 +22,20 @@ body {
 @import './components/Path.scss';
 @import './components/ButtonCTA.scss';
 @import './components/Advantage.scss';
+@import './components/ChartPieItem.scss';
+
+
 
 @import './containers/UserMain.scss';
 @import './containers/Filter.scss';
 @import './containers/Checkboxes.scss';
 @import './containers/Navbar.scss';
+@import './containers/ChartHalfDoughtnut.scss';
+@import './containers/BarChart.scss';
+@import './containers/ChartPie.scss';
+@import 'containers/ChartPieListItem.scss';
+@import './containers/UserProject.scss';
+@import 'containers/OperativeSystem.scss';
 
 
 @import './pages/adminView.scss';

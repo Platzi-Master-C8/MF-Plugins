@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ChartPieListItem } from '../../containers/ChartPieListItem/ChartPieListItem';
 import { ChartPieItem } from '../../components/ChartPieItem/ChartPieItem';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import "../../globals.css";
-import './ChartPie.css';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
@@ -52,21 +51,15 @@ export const ChartPie = ({ usedLanguages, loading }) => {
         !loading ?        
         <div className="pieChart">
             <div className="chart-container">
-              <Pie options={chartOptions} data={chartData} />
+              <Pie 
+                options={chartOptions} 
+                data={chartData} 
+              />
             </div>
-            <div className="chartItem-container">   
-              { 
-                usedLanguages ? 
-                usedLanguages.map((data, index) => (
-                  <ChartPieItem 
-                    key={data.name} 
-                    name={data.name} 
-                    percentage={data.value} 
-                    color={colors[index]}/>
-                )) : 
-                null
-              }       
-            </div>
+            <ChartPieListItem 
+              usedLanguages={usedLanguages}
+              colors={colors}
+            />
         </div> :
         null
         

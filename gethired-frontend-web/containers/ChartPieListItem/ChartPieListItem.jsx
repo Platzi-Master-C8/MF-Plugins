@@ -1,23 +1,24 @@
 import React from 'react';
 import { ChartPieItem } from '../../components/ChartPieItem/ChartPieItem';
 
-import "../../globals.css";
-import './ChartPieListItem.css';
 
 
-const args = {
-    name: "Rust",
-    percentage: "45%",
-}
-
-export const ChartPieListItem = () => {
+export const ChartPieListItem = ({  usedLanguages, colors }) => {
 
     return (
         <>
             <ul className="ChartPieListItem">
-                <ChartPieItem {...args} />
-                <ChartPieItem {...args} />
-                <ChartPieItem {...args} />
+                { 
+                    usedLanguages ? 
+                    usedLanguages.map((data, index) => (
+                    <ChartPieItem 
+                        key={data.name} 
+                        name={data.name} 
+                        percentage={data.value} 
+                        color={colors[index]}/>
+                    )) : 
+                    null
+                }  
             </ul>
         </>
     )

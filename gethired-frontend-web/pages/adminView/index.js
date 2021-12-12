@@ -1,8 +1,12 @@
-import React from 'react';
+import { useEffect } from 'react';
 import Head from 'next/head';
 import PluginStatus  from '../../components/PluginStatus/PluginStatus.jsx';
 import { UserMain } from '../../containers/UserMain/UserMain.jsx';
 import Filter  from '../../containers/Filter/Filter.jsx';
+import { ChartHalfDoughtnut } from '../../containers/ChartHalfDoughtnut/ChartHalfDoughtnut.jsx'
+import { ChartPie } from '../../containers/ChartPie/ChartPie.jsx'
+import { UserProject } from '../../containers/UserProject/UserProject.jsx'
+import OperativeSystem from '../../containers/OperativeSystem/OperativeSystem.jsx'
 
 export async function getStaticProps() {
     const res = await fetch('http://localhost:3000/api/users')
@@ -23,7 +27,7 @@ export async function getStaticProps() {
 
 export default function adminView( { data } ) {
     const mockData = data.data
-    console.log(mockData)
+
 
     return(
         <>
@@ -46,7 +50,29 @@ export default function adminView( { data } ) {
                     currentToken={mockData.token}
                 />
                 <Filter />
-
+                <div className='charts-container'>
+                    <ChartHalfDoughtnut 
+                    
+                    />
+                    <ChartPie 
+                        usedLanguages={mockData.statistics.usedLenguages}
+                    />
+                </div>
+                <div className="projects-container">
+                    {
+                        mockData.projects.map(project => (
+                            <UserProject 
+                                projectName={project.name}
+                                description={project.description}
+                                gitHubRepo={project.link}
+                                key={project.name}
+                            />
+                        ))
+                    }
+                </div>
+                <OperativeSystem 
+                    system={mockData.statistics.os}
+                />              
             </main>
         </>
     )

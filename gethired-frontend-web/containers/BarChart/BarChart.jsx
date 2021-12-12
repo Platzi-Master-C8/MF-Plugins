@@ -13,9 +13,6 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-import "../../globals.css";
-import "./BarChart.css";
-
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -26,7 +23,7 @@ ChartJS.register(
 );
 
 
-const data = {
+export const data = {
     labels: ["HTML", "JavaScript", "TypeScript", "CSS"],
     datasets: [
         {
@@ -40,7 +37,7 @@ const data = {
     ]
 }
 
-const options = {
+export const options = {
     scales: {
         y: {
             beginAtZero: true

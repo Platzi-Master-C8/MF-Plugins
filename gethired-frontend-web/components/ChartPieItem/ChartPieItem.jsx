@@ -1,6 +1,5 @@
 import React from 'react';
-import "../../globals.css";
-import './ChartPieItem.css';
+
 
 
 export const ChartPieItem = ({ name, color, percentage }) => {
