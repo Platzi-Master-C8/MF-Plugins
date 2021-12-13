@@ -3,9 +3,13 @@
   
   *{
     margin: 20px 0;  
-  }
+  } 
 
   @extend .main__content;
+}
+
+.three > div{
+  padding-top: 20px;
 }
 
 .four{
