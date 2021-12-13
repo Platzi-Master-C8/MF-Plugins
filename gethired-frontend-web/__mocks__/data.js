@@ -1,7 +1,7 @@
-const users = {
-  "firstVictim": {
+const user = {
     id: 105,
     name: "Jito",
+    token: "superhyperextremefuckingtoken",
     projects: [
       {
         id: 1,
@@ -56,7 +56,29 @@ const users = {
             barThickness: 32
           }
         ]
-      }
+      },
+      usedLenguages: [
+        {
+          name: "JS",
+          value: 12.5,
+        },
+        {
+          name: "Rust",
+          value: 25,
+        },
+        {
+          name: "php",
+          value: 25,
+        },
+        {
+          name: "Java",
+          value: 12.5,
+        },
+        {
+          name: "Python",
+          value: 25,
+        },
+    ]
     },
     average: {
       labels: ['Today', 'Daily Average'],
@@ -70,7 +92,7 @@ const users = {
       ],
     },
     plugin: {
-      lastTracking: new Date(11, 4, 3, 15),
+      lastTracking: "09-12-2021",
       dataTrack: {
         time: true,
         languages: true,
@@ -84,7 +106,6 @@ const users = {
         os: true
       }
     }
-  }
 }
 
-export default users;
+export default user;

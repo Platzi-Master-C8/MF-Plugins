@@ -1,0 +1,46 @@
+.adminView-main {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas: "pluginStatus" "userMain" "filter" "charts" "charts" "projects" "OperativeSystem";
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.projects-container {
+    grid-area: projects;
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-gap: 20px;
+}
+
+.charts-container {
+    grid-area: charts;
+    display: grid;
+    grid-gap: 20px;
+}
+
+
+
+
+@media (min-width: 500px) {
+    .adminView-main {
+        padding: 50px
+    }
+}
+
+@media (min-width: 1000px) {
+    .adminView-main {
+        grid-template-columns: 230px 710px;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "pluginStatus userMain" "filter charts" "filter projects"  " filter OperativeSystem";
+        justify-content: center;
+        padding: 50px
+    }
+    .charts-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

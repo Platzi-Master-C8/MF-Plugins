@@ -1,0 +1,22 @@
+.ChartPieItem {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.ChartPieItem-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+    border-radius: 6px;
+    /* background-color: blueviolet; */
+}
+
+.percentage {
+    font-weight: 100;
+    font-size: 13px;
+}

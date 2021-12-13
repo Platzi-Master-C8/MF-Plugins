@@ -1,0 +1,94 @@
+.UserProject {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 20px rgba(0,0,0,0.20);
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+.UserProject-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.UserProject-title {
+    width: 100%;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.UserProject-description {
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.UserProject-button {
+    width: 100%;
+    height: 42px;
+    border: none;
+    color: white;
+    background: linear-gradient(90deg, rgba(95,100,255,0.7) 0%, rgba(174,78,255,0.85) 100%);
+    border-radius: 6px;
+    font-size: 16px;
+}
+.UserProject-button:hover {
+    cursor: pointer;
+}
+
+
+.UserProject.loading{
+    position: relative;
+    padding: 0;
+}
+
+.loading-skeletonContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.skeleton-item {
+    position: relative;
+    top: -2px;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (min-width: 1000px) {
+    .UserProject {
+        width: 710px;
+    }
+    
+    .UserProject-container {
+        flex-direction: row;
+        align-items: center;
+
+    }
+    
+    .UserProject-title {
+        flex-grow: 2;
+        width: 500px;
+
+    }
+    
+    .UserProject-description {
+        width: 500px;
+    }
+    
+    .UserProject-button {
+        width: 140px;
+    }
+
+
+}
