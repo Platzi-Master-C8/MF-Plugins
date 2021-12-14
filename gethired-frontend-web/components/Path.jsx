@@ -6,7 +6,7 @@ const Path = ({ active }) => (
     <hr />
     {
       steps.map(step => (
-        <div className={`path__item ${active == step.value ? "active" : null}`} key={step}>
+        <div className={`path__item ${active == step.value ? "active" : null}`} key={step.value}>
           <Link href={step.url}>
             <a>
               {step.value}
