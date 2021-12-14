@@ -9,23 +9,6 @@ import { ChartPie } from '../../containers/ChartPie/ChartPie.jsx'
 import { UserProject } from '../../containers/UserProject/UserProject.jsx'
 import OperativeSystem from '../../containers/OperativeSystem/OperativeSystem.jsx'
 
-// export async function getStaticProps({ params: {slug} }) {
-
-//     const res = await fetch('http://localhost:3000/api/users')
-//     const data = await res.json()
-
-//     if (!data) {
-//         return {
-//           notFound: true,
-//         }
-//     }
-    
-
-//     return {
-//         props: { data }, 
-//     }
-
-// }
 
 const AdminView = () => {
     // const mockData = data.data
@@ -95,7 +78,17 @@ const AdminView = () => {
         )
     }else{
         return(
-            <div>Hi</div>
+            <div className="loading-main">
+                <div>
+                    <PluginStatus loading={true} />
+                    <Filter loading={true} />
+                </div>
+
+                <div>
+                    <PluginStatus loading={true} />
+                    <Filter loading={true} />
+                </div>
+            </div>
         )
     }
 }
