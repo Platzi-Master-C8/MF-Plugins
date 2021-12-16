@@ -14,7 +14,7 @@ const Step5 = () => (
       <article>
         <Advantage img={chartLogo} alt="chart logo" title="Measurement"/>
         <Advantage img={securityLogo} alt="blocker logo" title="Security"/>
-        <Advantage img={squareLogo} alt="square logo" title="Integrity"/>
+        <Advantage img={squareLogo} alt="square logo" title="Integration"/>
       </article>
 
       <Link href="/adminView">
