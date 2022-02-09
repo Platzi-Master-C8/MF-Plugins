@@ -10,8 +10,6 @@ import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const ChartHalfDoughtnut = ({ loading }) => {
-
-
   const data = {
     labels: ['Today', 'Daily Average'],
     datasets: [
@@ -37,10 +35,8 @@ export const ChartHalfDoughtnut = ({ loading }) => {
     },
   };
   
-
-
   return (
-    <>
+    <React.Fragment>
       {loading ? (
         <section className="dunnut loading">
           <Skeleton
@@ -51,22 +47,24 @@ export const ChartHalfDoughtnut = ({ loading }) => {
       ) : null}
 
       {!loading ? (
-        <div className="donnutChart-container">
-          <div className="chart-title">
-            <h2>
-              Thu Nov 12th <span>3 hrs 00 mins</span>
-            </h2>
-          </div>
-          <div className="donnutChart">
-            <Doughnut data={data} options={options} />
-          </div>
-          <p className="percent">86%</p>
+        <section className="donnutChart-container">
+          <article>
+            <div className="chart-title">
+              <h2>
+                Thu Nov 12th
+              </h2>
+            </div>
+            <div className="donnutChart">
+              <Doughnut data={data} options={options} />
+            </div>
+            <p className="percent">86%</p>
+          </article>
           <p className="average">
             Daily Average: <span>3 hrs 33 mins</span>
           </p>
-        </div>
+        </section>
       ) : null}
-    </>
+    </React.Fragment>
   );
 };
 

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ChartPieListItem } from '../../containers/ChartPieListItem/ChartPieListItem';
 import { ChartPieItem } from '../../components/ChartPieItem/ChartPieItem';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
@@ -10,7 +9,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 
-export const ChartPie = ({ usedLanguages, loading }) => {
+export const ChartPie = ({ usedLanguages }) => {
 
   const colors = [
     '#AE4EFF',
@@ -32,45 +31,33 @@ export const ChartPie = ({ usedLanguages, loading }) => {
 
   const chartOptions =  {
     plugins: {
-        legend: {
-          display: false,
-        },
+      legend: {
+        display: false,
+      },
     }
   }
 
   return (
-    <>
-      {
-        loading ?
-        <div className="pieChart loading">
-            <Skeleton containerClassName="loading-skeletonContainer" className="skeleton-item"/>
-        </div> :
-        null
-      }
-      { 
-        !loading ?        
-        <div className="pieChart">
-            <div className="chart-container">
-              <Pie 
-                options={chartOptions} 
-                data={chartData} 
-              />
-            </div>
-            <ChartPieListItem 
-              usedLanguages={usedLanguages}
-              colors={colors}
+    <React.Fragment>
+      <div className="pieChart">
+          <div className="chart-container">
+            <Pie 
+              options={chartOptions} 
+              data={chartData} 
             />
-        </div> :
-        null
-        
-      }
-    </>
+          </div>
+          <ChartPieListItem 
+            usedLanguages={usedLanguages}
+            colors={colors}
+          />
+      </div>
+    </React.Fragment>
   )
 }
 
 
 ChartPie.propTypes = {
-    usedLanguages: PropTypes.array,
-    loading: PropTypes.bool,
+  usedLanguages: PropTypes.array,
+  loading: PropTypes.bool,
 };
   

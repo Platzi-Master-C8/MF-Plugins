@@ -1,35 +1,23 @@
 .percent {
   font-size: 18px;
 }
-
-.average {
-  font-size: 24px;
-}
-
 .chart-title {
   align-self: center;
   position: relative;
   z-index: 10;
-}
-
-.chart-title h2 {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.chart-title span {
-  font-size: 14px;
-  color: gray;
+  & h2{
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
 
 .average {
   font-size: 18px;
   margin-top: 15px;
-}
-
-.average span {
-  font-size: 16px;
-  color: gray;
+  & span{
+    font-size: 16px;
+    color: gray;
+  }
 }
 
 .donnutChart-container {
@@ -44,6 +32,9 @@
   box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   font-family: 'Mulish', sans-serif;
+  & > article{
+    text-align: center;
+  }
 }
 
 .dunnut.loading {
@@ -60,12 +51,20 @@
   top: -40px;
 }
 
-
-@media (min-width: 1000px) {
-  .donnutChart-container  {
-      width: 345px;
-      height: 191px;
+@media screen and (min-width: 550px){
+  .donnutChart-container{
+    flex-direction: revert;
   }
-
-  
+}
+@media (min-width: 900px) {
+  .donnutChart-container {
+    width: fit-content;
+    height: 191px;
+  }
+  .average {
+    text-align: center;
+    & > span{
+      display: block;
+    }
+  }
 }
