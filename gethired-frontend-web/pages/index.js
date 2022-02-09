@@ -7,6 +7,13 @@ import { UserMain } from "../containers/UserMain"
 
 export default function Home() {  
   const [fakeData, setFakeData] = React.useState([]);
+  const [state, setState] = React.useState({
+    chartType: "pie-chart"
+  })
+  const handleChange = (e) => setState(prev => ({
+    ...prev,
+    chartType: e.target.value
+  }))
 
   React.useEffect(() => {
       window
@@ -32,11 +39,21 @@ export default function Home() {
           <ChartHalfDoughtnut />
         </section>
   
-        <section className="Main__chart-section">
-          <h2>Languages in the last 7 days</h2>
-          <ChartPie 
-            usedLanguages={mockData.statistics.usedLenguages}
-          />
+        <section className="Main__chart-section" onChange={handleChange}>
+          <article>
+            <h2>Languages in the last 7 days</h2>
+            <select name="charts-type" defaultValue={state.chartType}>
+              <option value="pie-chart">Pie Chart</option>
+              <option value="bar-chart">Bar Chart</option>
+            </select>
+          </article>
+          {
+            state.chartType === "bar-chart" ? 
+            <p>Bar Chart</p> :
+            <ChartPie 
+              usedLanguages={mockData.statistics.usedLenguages}
+            />
+          }
         </section>
       </main>
     )
