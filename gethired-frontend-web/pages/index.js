@@ -1,31 +1,14 @@
-import Image from "next/image"
-import Link from "next/link"
-import Path from "../components/Path"
-import TechImg from "../public/technology.png"
-import ButtonCTA from "../components/ButtonCTA/ButtonCTA"
+// components
+import PluginStatus from "../components/PluginStatus"
+import { UserMain } from "../containers/UserMain/UserMain"
 
-export default function Home() {
-  
+export default function Home() {  
   return (
-    <main className="main">
-      <section className="main__content">
-        <h2 className="main__title">What is GH-Code Tracking?</h2>
-        <div>
-          <p>
-          GH-Code Tracking is an extension for your VSCode text editor. It was built focusing on tech professional looking for mesuring their time and performance while writing code. With this extension you can track, share and visualize information about your time using VSCode only a click away. Show off your stats with recruiters and partners now!
-          </p>
-
-          <Image src={TechImg} />
-        </div>
-
-        <Link href="/steps/two">
-          <a>
-            <ButtonCTA name="Get the extension in VSCode" />
-          </a>
-        </Link>
+    <main className="Main__wrapper">
+      <section className="Main__header">
+        <PluginStatus date="08/02/2022" />
+        <UserMain userName="Jito" currentToken="f9d5d5a8a4h7k7y2l8"/>
       </section>
-
-      <Path active={1}/>
     </main>
   )
   

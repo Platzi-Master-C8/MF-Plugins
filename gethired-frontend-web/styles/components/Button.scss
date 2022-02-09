@@ -15,10 +15,9 @@
     color: white;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
     .getToken-button {
-        width: 165px;
+        width: fit-content;
+        padding: 0 5px;
     }
-    
-
 }

@@ -1,6 +1,6 @@
 .loading-main{
   
-  @extend .main;
+  @extend .main !optional;
   
   align-items: center;
   

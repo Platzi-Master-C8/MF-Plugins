@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import Skeleton from "react-loading-skeleton";
 import Image from 'next/image';
-import Checked from "../../public/checked.svg";
+import Checked from "../public/checked.svg";
 
 
 
-const PluginStatus = ({ title, text, date, loading }) => (
+const PluginStatus = ({ date, loading }) => (
     <React.Fragment>
         {
             loading ?
@@ -28,9 +28,9 @@ const PluginStatus = ({ title, text, date, loading }) => (
                 </span>
 
                 <div className="plugin-description">
-                    <h3>{ title }</h3>
+                    <h3>Plugin status</h3>
                     <div>
-                        <p>{ text }</p>
+                        <p>Last tracking: </p>
                         <p>{ date }</p>
                     </div>
                 </div>

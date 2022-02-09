@@ -21,7 +21,7 @@ export const UserMain = ({ userName, currentToken, loading, LoadingGetToken, err
                 <section className="userMain">
                     <article className="userMain-container">
                         <h1>Welcome back, {userName}</h1>
-                        <p><strong>Your current token is:</strong> {currentToken}</p>
+                        <p>Your current token is: {currentToken}</p>
                         {
                             errorInGetLogin ? 
                             <p className="userMain-errorMessage">We has a problem, please try again later</p> : 
