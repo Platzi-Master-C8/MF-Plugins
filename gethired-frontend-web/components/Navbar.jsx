@@ -8,7 +8,7 @@ const Navbar = ({}) => {
     <header className="Navbar__wrapper">
       <nav className='Navbar__content'>
         <article className="Navbar__logo">
-          <Image src={Logo} />
+          <Image src={Logo} alt="" />
 
           <h2>CODE TRACKER</h2>
         </article>

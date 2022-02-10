@@ -20,7 +20,8 @@ const PluginStatus = ({ date, loading }) => (
             !loading ?
             <div className="plugin-status">
                 <span className="plugin-status__icon"> 
-                    <Image 
+                    <Image
+                        alt=""
                         src={Checked} 
                         width="20"
                         height="20"
