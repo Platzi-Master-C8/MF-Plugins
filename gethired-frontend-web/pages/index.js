@@ -13,20 +13,20 @@ const matchData = (data) => {
   const time = data.languages.map(item => item.time)
   const colors = data.languages.map(item => COLORS[Math.ceil(Math.random() * COLORS.length - 1)])
 
-  console.log({
-    labels: languages,
-    datasets: [{
-      data: time,
-      barThickness: 30,
-      backgroundColor: colors,
-      hoverOffset: 4,
-      barPercentage: 0.1
-    }]
-  })
+  // console.log({
+  //   labels: languages,
+  //   datasets: [{
+  //     data: time,
+  //     barThickness: 30,
+  //     backgroundColor: colors,
+  //     hoverOffset: 4,
+  //     barPercentage: 0.1
+  //   }]
+  // })
 }
 
 export default function Home() {  
-  const [fakeData, setFakeData] = React.useState([]);
+  const [fakeData, setFakeData] = React.useState(null);
   const [state, setState] = React.useState({
     chartType: "bar-chart"
   })
@@ -40,19 +40,20 @@ export default function Home() {
       "https://ms-plugins.herokuapp.com/api/v1/users/6202d7c1da486c87775f46f8/statistics"
     )
     .then((response) => response.json())
-    .then((data) => matchData(data));
+    .then((data) => setFakeData(data));
 
-    window
-    .fetch("api/users")
-    .then(response => response.json())
-    .then( data => {
-      setFakeData(data)
-    } )
+    // window
+    // .fetch("api/users")
+    // .then(response => response.json())
+    // .then( data => {
+    //   console.log("Fake ", data.data.statistics.usedLenguages)
+    //   setFakeData(data)
+    // } )
   }, [])
 
-  const mockData = fakeData.data
+  // const mockData = fakeData.data
 
-  if(mockData){
+  if(fakeData){
     return (
       <main className="Main__wrapper">
         <section className="Main__header">
@@ -75,9 +76,9 @@ export default function Home() {
           </article>
           {
             state.chartType === "bar-chart" ? 
-            <BarChart usedLanguages={mockData.statistics.usedLenguages} /> :
+            <BarChart usedLanguages={fakeData.languages} /> :
             <ChartPie 
-              usedLanguages={mockData.statistics.usedLenguages}
+              usedLanguages={fakeData.languages}
             />
           }
         </section>

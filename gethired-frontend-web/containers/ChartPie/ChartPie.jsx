@@ -15,11 +15,9 @@ export const ChartPie = ({ usedLanguages }) => {
     '#AE4EFF',
     '#555BFF',
     '#0AC533',
-    '#FF5353',
-    '#FBA618'
   ]
-  const labels = usedLanguages.map( data => data.name )
-  const values = usedLanguages.map( data => data.value )
+  const labels = usedLanguages.map( data => data.lan )
+  const values = usedLanguages.map( data => data.time )
   const chartData = {
     labels: labels,
     datasets: [{
