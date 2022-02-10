@@ -2,10 +2,28 @@ import React from "react";
 // components
 import { MainSkeleton } from "../components/MainSkeleton";
 import PluginStatus from "../components/PluginStatus"
+import { COLORS } from "../constants";
 import { BarChart } from "../containers/BarChart/BarChart";
 import { ChartHalfDoughtnut } from "../containers/ChartHalfDoughtnut/ChartHalfDoughtnut"
 import { ChartPie } from "../containers/ChartPie/ChartPie"
 import { UserMain } from "../containers/UserMain"
+
+const matchData = (data) => {
+  const languages = data.languages.map(item => item.lan)
+  const time = data.languages.map(item => item.time)
+  const colors = data.languages.map(item => COLORS[Math.ceil(Math.random() * COLORS.length - 1)])
+
+  console.log({
+    labels: languages,
+    datasets: [{
+      data: time,
+      barThickness: 30,
+      backgroundColor: colors,
+      hoverOffset: 4,
+      barPercentage: 0.1
+    }]
+  })
+}
 
 export default function Home() {  
   const [fakeData, setFakeData] = React.useState([]);
@@ -18,12 +36,18 @@ export default function Home() {
   }))
 
   React.useEffect(() => {
-      window
-      .fetch("api/users")
-      .then(response => response.json())
-      .then( data => {
-          setFakeData(data)
-      } )
+    fetch(
+      "https://ms-plugins.herokuapp.com/api/v1/users/6202d7c1da486c87775f46f8/statistics"
+    )
+    .then((response) => response.json())
+    .then((data) => matchData(data));
+
+    window
+    .fetch("api/users")
+    .then(response => response.json())
+    .then( data => {
+      setFakeData(data)
+    } )
   }, [])
 
   const mockData = fakeData.data
