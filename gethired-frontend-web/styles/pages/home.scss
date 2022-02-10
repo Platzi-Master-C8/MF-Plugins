@@ -11,6 +11,20 @@
 }
 .Main__chart-section{
   margin-bottom: 35px;
+  .chart-section__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    select{
+      padding: 9px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    // .chart-section__option{
+    //   padding: 9px;
+    // }
+  }
   h2{
     font-family: $secondaryFont;
     font-weight: 100;
@@ -23,5 +37,5 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-  }  
+  }
 }

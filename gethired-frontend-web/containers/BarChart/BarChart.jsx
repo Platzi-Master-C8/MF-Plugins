@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Skeleton from "react-loading-skeleton";
 
 import { 
     Chart as ChartJS,
@@ -22,52 +21,77 @@ ChartJS.register(
     Legend
 );
 
+export const BarChart = ({ usedLanguages }) => {
+  const colors = [
+    '#AE4EFF',
+    '#555BFF',
+    '#0AC533',
+    '#FF5353',
+    '#FBA618'
+  ]
+  const labels = usedLanguages.map( data => data.name )
+  const values = usedLanguages.map( data => data.value )
+  const chartData = {
+    labels: labels,
+    datasets: [{
+      data: values,
+      barThickness: 30,
+      backgroundColor: colors,
+      hoverOffset: 4,
+      barPercentage: 0.1
+    }]
+  };
 
-export const data = {
-    labels: ["HTML", "JavaScript", "TypeScript", "CSS"],
-    datasets: [
-        {
-            label: "Time spent programming",
-            backgroundColor: "#555BFF",
-            data: [65, 59, 80, 81],
-            borderWidth: 1,
-            borderRadius: 6,
-            barThickness: 32
-        }
-    ]
-}
-
-export const options = {
-    scales: {
-        y: {
-            beginAtZero: true
+  const chartOptions =  {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      title: {
+        display: true,
+        text: 'Time (in minutes)',
+        align: "start",
+        font: {
+          size: 19
         },
-        x: {
-            grid: {
-            display: false
-            }
+        padding: {
+          bottom: 30,
         }
+      }
     },
-}
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          font: {
+            size: 16,
+          },
+        },
+      },
+      x: {
+        ticks: {
+          font: {
+            size: 16,
+          },
+        },
+        grid: {
+          display: false,
+        }
+      }
+    }
+  }
 
-export const BarChart = ({ loading }) => (
+  return(
     <React.Fragment>
-        {
-            loading?
-            <section className="barchartContainer">
-                <Skeleton containerClassName="loading-skeletonContainer" className="skeleton-item"/>
-            </section>
-            : null
-        }
-        {
-            !loading ?
-            <section className="barchartContainer">
-                <Bar options={options} data={data} />
-            </section>
-            : null
-        }
+      <section className="barchartContainer">
+        <article>
+          <Bar options={chartOptions} data={chartData} />
+        </article>
+      </section>
     </React.Fragment>
-)
+  )
+}
 
 BarChart.propTypes = {
     loading: PropTypes.bool,

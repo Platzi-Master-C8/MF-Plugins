@@ -1,6 +1,7 @@
 import React from "react";
 // components
 import PluginStatus from "../components/PluginStatus"
+import { BarChart } from "../containers/BarChart/BarChart";
 import { ChartHalfDoughtnut } from "../containers/ChartHalfDoughtnut/ChartHalfDoughtnut"
 import { ChartPie } from "../containers/ChartPie/ChartPie"
 import { UserMain } from "../containers/UserMain"
@@ -8,7 +9,7 @@ import { UserMain } from "../containers/UserMain"
 export default function Home() {  
   const [fakeData, setFakeData] = React.useState([]);
   const [state, setState] = React.useState({
-    chartType: "pie-chart"
+    chartType: "bar-chart"
   })
   const handleChange = (e) => setState(prev => ({
     ...prev,
@@ -40,16 +41,16 @@ export default function Home() {
         </section>
   
         <section className="Main__chart-section" onChange={handleChange}>
-          <article>
+          <article className="chart-section__header">
             <h2>Languages in the last 7 days</h2>
             <select name="charts-type" defaultValue={state.chartType}>
-              <option value="pie-chart">Pie Chart</option>
-              <option value="bar-chart">Bar Chart</option>
+              <option className="chart-section__option" value="pie-chart">Pie Chart</option>
+              <option className="chart-section__option" value="bar-chart">Bar Chart</option>
             </select>
           </article>
           {
             state.chartType === "bar-chart" ? 
-            <p>Bar Chart</p> :
+            <BarChart usedLanguages={mockData.statistics.usedLenguages} /> :
             <ChartPie 
               usedLanguages={mockData.statistics.usedLenguages}
             />
