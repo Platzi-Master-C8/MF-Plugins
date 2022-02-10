@@ -1,5 +1,6 @@
 import React from "react";
 // components
+import { MainSkeleton } from "../components/MainSkeleton";
 import PluginStatus from "../components/PluginStatus"
 import { BarChart } from "../containers/BarChart/BarChart";
 import { ChartHalfDoughtnut } from "../containers/ChartHalfDoughtnut/ChartHalfDoughtnut"
@@ -60,8 +61,7 @@ export default function Home() {
     )
   }else{
     return(
-      <p>Loading...</p>
+      <MainSkeleton />
     )
   }
-  
 }
