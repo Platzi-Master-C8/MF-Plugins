@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '../../components/Button/Button';
+import { Button } from '../components/Button/Button';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
@@ -20,8 +20,8 @@ export const UserMain = ({ userName, currentToken, loading, LoadingGetToken, err
                 !loading ? 
                 <section className="userMain">
                     <article className="userMain-container">
-                        <h1>Welcome back, {userName}</h1>
-                        <p><strong>Your current token is:</strong> {currentToken}</p>
+                        <h2>Welcome back, {userName}</h2>
+                        <p>Your current token is: {currentToken}</p>
                         {
                             errorInGetLogin ? 
                             <p className="userMain-errorMessage">We has a problem, please try again later</p> : 

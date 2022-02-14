@@ -5,7 +5,7 @@
     margin: 20px 0;  
   } 
 
-  @extend .main__content;
+  @extend .main__content !optional;
 }
 
 .three > div{

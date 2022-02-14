@@ -1,0 +1,3 @@
+[build]
+publish = ".next"
+CI = "npm run build"

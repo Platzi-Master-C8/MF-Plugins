@@ -5,7 +5,11 @@
     margin: 0 20px;
     font-family: sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
+    & .percentage {
+        font-weight: 100;
+        font-size: 16px;
+    }
 }
 
 .ChartPieItem-color {
@@ -14,9 +18,4 @@
     margin-right: 9px;
     border-radius: 6px;
     /* background-color: blueviolet; */
-}
-
-.percentage {
-    font-weight: 100;
-    font-size: 13px;
 }
