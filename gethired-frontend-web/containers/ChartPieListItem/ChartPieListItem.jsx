@@ -12,9 +12,9 @@ export const ChartPieListItem = ({  usedLanguages, colors }) => {
                     usedLanguages ? 
                     usedLanguages.map((data, index) => (
                     <ChartPieItem 
-                        key={data.name} 
-                        name={data.name} 
-                        percentage={data.value} 
+                        key={data.lan} 
+                        name={data.lan} 
+                        percentage={data.time} 
                         color={colors[index]}/>
                     )) : 
                     null
