@@ -18,7 +18,7 @@ export default function Home() {
     languages: null,
     lastTracking: null,
     totalTime: null,
-    error: false,
+    error: true,
     name: ""
   });
 
@@ -29,22 +29,22 @@ export default function Home() {
     }));
 
   React.useEffect(async () => {
-    const Data = await getData()
-    if(typeof Data === 'string'){
-      setState(prev => ({
-        ...prev,
-        error: true
-      }))
-    }else{
-      setState(prev => ({
-        ...prev,
-        lastTracking: dateRegExp.exec(Data.lastTracking)[0],
-        languages: Data.languages,
-        totalTime: Data.totalDevelopment,
-        name: Data.name,
-        token: Data.key
-      }))
-    }
+    // const Data = await getData()
+    // if(typeof Data === 'string'){
+    //   setState(prev => ({
+    //     ...prev,
+    //     error: true
+    //   }))
+    // }else{
+    //   setState(prev => ({
+    //     ...prev,
+    //     lastTracking: dateRegExp.exec(Data.lastTracking)[0],
+    //     languages: Data.languages,
+    //     totalTime: Data.totalDevelopment,
+    //     name: Data.name,
+    //     token: Data.key
+    //   }))
+    // }
   }, []);
 
   return(
@@ -90,7 +90,10 @@ export default function Home() {
             </section>
           </React.Fragment>
         : state.error ?
-          <p>Error loading content. Try again later...</p>
+          <div>
+            <h2 className='error'>Error loading content.</h2>
+            <h2 className='error'>Try again later...</h2>
+          </div>
         : <MainSkeleton />
       }
     </main>

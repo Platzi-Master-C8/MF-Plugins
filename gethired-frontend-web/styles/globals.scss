@@ -16,6 +16,11 @@ body {
   background-color: white;
 }
 
+.error{
+  font-family: $mainFont;
+  color: $colorContrastTwo;
+}
+
 
 @import './components/PluginStatus.scss';
 @import './components/Button.scss';
