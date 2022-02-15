@@ -1,9 +1,9 @@
 import React from "react"
 import Navbar from "./Navbar";
 
-const Layout = ({ children }) => (
+const Layout = ({ userName, children }) => (
   <React.Fragment>
-    <Navbar />
+    <Navbar userName={userName} />
     { children }
   </React.Fragment>
 )

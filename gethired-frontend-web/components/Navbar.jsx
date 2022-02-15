@@ -3,7 +3,7 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import Logo from '/public/logo-app.png';
 
-const Navbar = ({}) => {
+const Navbar = ({userName}) => {
   return (
     <header className="Navbar__wrapper">
       <nav className='Navbar__content'>
@@ -13,9 +13,11 @@ const Navbar = ({}) => {
           <h2>CODE TRACKER</h2>
         </article>
 
-        <div className="navbar__profile">
-          <h2>J</h2>
-        </div>
+        {userName && 
+          <div className="navbar__profile">
+            <h2>{userName[0]}</h2>
+          </div>
+        }
       </nav>
     </header>
   );

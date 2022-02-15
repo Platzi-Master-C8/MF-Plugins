@@ -3,49 +3,20 @@ import React from 'react';
 // components
 import { MainSkeleton } from '../components/MainSkeleton';
 import PluginStatus from '../components/PluginStatus';
-import { dateRegExp } from '../constants';
 import { BarChart } from '../containers/BarChart/BarChart';
 import { ChartHalfDoughtnut } from '../containers/ChartHalfDoughtnut/ChartHalfDoughtnut';
 import { ChartPie } from '../containers/ChartPie/ChartPie';
 import { UserMain } from '../containers/UserMain';
-import { getData } from '../utils/getData';
 // env variables
 const API = process.env.API;
 
-export default function Home() {
-  const [state, setState] = React.useState({
-    chartType: 'pie-chart',
-    languages: null,
-    lastTracking: null,
-    totalTime: null,
-    error: true,
-    name: ""
-  });
-
-  const handleChange = (e) =>
+export default function Home({ state, setState }) {
+  const handleChange = (e) => {
     setState((prev) => ({
       ...prev,
       chartType: e.target.value,
     }));
-
-  React.useEffect(async () => {
-    // const Data = await getData()
-    // if(typeof Data === 'string'){
-    //   setState(prev => ({
-    //     ...prev,
-    //     error: true
-    //   }))
-    // }else{
-    //   setState(prev => ({
-    //     ...prev,
-    //     lastTracking: dateRegExp.exec(Data.lastTracking)[0],
-    //     languages: Data.languages,
-    //     totalTime: Data.totalDevelopment,
-    //     name: Data.name,
-    //     token: Data.key
-    //   }))
-    // }
-  }, []);
+  }
 
   return(
     <main className="Main__wrapper">
