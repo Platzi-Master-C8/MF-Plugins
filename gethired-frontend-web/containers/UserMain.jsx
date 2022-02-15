@@ -1,45 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '../components/Button/Button';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 
-export const UserMain = ({ userName, currentToken, loading, LoadingGetToken, errorInGetLogin, getToken }) => {
+export const UserMain = ({ userName, currentToken }) => {
+  userName = userName.split(" ")[0]
 
-    return (
-        <>
-            {
-                loading ? 
-                <section className="userMain loading">
-                    <Skeleton containerClassName="loading-skeletonContainer" className="skeleton-item"/>
-                </section> :
-                null
-            }
-            {
-                !loading ? 
-                <section className="userMain">
-                    <article className="userMain-container">
-                        <h2>Welcome back, {userName}</h2>
-                        <p>Your current token is: {currentToken}</p>
-                        {
-                            errorInGetLogin ? 
-                            <p className="userMain-errorMessage">We has a problem, please try again later</p> : 
-                            null
-                        }
-                    </article>
+  return (
+    <section className="userMain">
+      <article className="userMain-container">
+        <h2>Welcome back, <span>{userName}</span></h2>
+        <p>Your current token is: {currentToken}</p>
+      </article>
 
-                    {
-                        LoadingGetToken ?
-                        <div class="loader"></div> :
-                        null
-                    }
-                    <Button name="Get New Token" onClick={getToken}/>
-                </section> : 
-                null
-            }
-        </>
-    )
+      <Button name="Get New Token"/>
+    </section>
+  )
 }
 
 
