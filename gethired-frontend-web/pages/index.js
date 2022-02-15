@@ -38,7 +38,7 @@ export default function Home({ state, setState }) {
 
             <section className="Main__chart-section">
               <h2>Time coding today</h2>
-              <ChartHalfDoughtnut time={state.totalTime} />
+              <ChartHalfDoughtnut time={state.totalTime} lastTracking={state.lastTracking} />
             </section>
 
             <section className="Main__chart-section" onChange={handleChange}>
