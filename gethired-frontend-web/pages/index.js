@@ -21,7 +21,7 @@ export default function Home({ state, setState }) {
   return(
     <section className="Main__wrapper">
       <Head>
-        <title>GetHired | Code tracker</title>
+        <title>Code tracker | Home</title>
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width"
@@ -43,7 +43,7 @@ export default function Home({ state, setState }) {
 
             <section className="Main__chart-section" onChange={handleChange}>
               <article className="chart-section__header">
-                <h2>Languages in the last 7 days</h2>
+                <h2>Languages statistics</h2>
                 <select name="charts-type" defaultValue={state.chartType}>
                   <option className="chart-section__option" value="pie-chart">
                     Pie Chart

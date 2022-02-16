@@ -1,43 +1,73 @@
-.Navbar__wrapper {
+.Navbar{
   width: 100%;
   height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid $colorContrastOne;
-}
-.Navbar__content{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-
-  a{
-    text-decoration: none;
+  &__dropdown{
+    position: absolute;
+    top: 125%;
+    width: fit-content;
+    background-color: white;
+    box-shadow: $mainShadow;
+    right: 0;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-family: $mainFont;
+  }
+  
+  &__info-section{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > button{
+      background-color: transparent;
+      border: none;
+      & > span{
+        width: 16px !important;
+      }
+    }
+    & > div{
+      margin-right: 5px;
+    }
   }
 
-  .navbar__profile a{
+  &__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    a{
+      text-decoration: none;
+    }
+  }
+
+  &__logo{
+    display: flex;
+    align-items: flex-end;
+    img{
+      max-width: 130px;
+    }
+    h2{
+      font-family: $mainFont;
+      font-size: 15px;
+      text-transform: uppercase;
+      margin-left: 5px;
+      padding-bottom: 4px;
+      color: $colorContrastTwo;
+    }
+  }
+}
+.Navbar__content{
+  .navbar__profile h2{
     color: white;
     font-family: $mainFont;
     font-size: 20px;
     text-transform: uppercase;
-  }
-}
-.Navbar__logo {
-  display: flex;
-  align-items: flex-end;
-  & img{
-    max-width: 130px;
-  }
-  & > h2{
-    font-family: $mainFont;
-    font-size: 15px;
-    text-transform: uppercase;
-    margin-left: 5px;
-    padding-bottom: 4px;
-    color: $colorContrastTwo;
   }
 }
 .navbar__profile {

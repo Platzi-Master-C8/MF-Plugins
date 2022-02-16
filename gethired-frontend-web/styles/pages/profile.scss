@@ -1,6 +1,9 @@
 .Profile{
   font-family: $mainFont;
   position: relative;
+  &__container:nth-child(1){
+    display: none;
+  }
   &__section{
     margin-bottom: 20px;
 

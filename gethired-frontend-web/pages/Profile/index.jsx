@@ -4,6 +4,7 @@ import { Button } from "../../components/Button/Button";
 import Image from 'next/image';
 import visible from "../../public/visible.svg";
 import hidden from '/public/hidden.svg';
+import Head from "next/head";
 
 export default function Profile({ state }){
   const [isVisible, setIsVisible] = React.useState(false)
@@ -12,6 +13,14 @@ export default function Profile({ state }){
   if(state){
     return(
       <section className="wrapper Profile">
+        <Head>
+          <title>Code tracker | Settings</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+        </Head>
+
         <section className="Profile__container">
           <h2>Settings</h2>
 

@@ -5,10 +5,7 @@ import { ChartPieItem } from '../../components/ChartPieItem/ChartPieItem';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-// import { COLORS } from '../../constants';
 ChartJS.register(ArcElement, Tooltip, Legend);
-
-
 
 export const ChartPie = ({ usedLanguages }) => {
   const labels = usedLanguages.map(data => data.lan)
@@ -28,6 +25,17 @@ export const ChartPie = ({ usedLanguages }) => {
       legend: {
         display: false,
       },
+      title: {
+        display: true,
+        text: 'Time (in minutes)',
+        align: "start",
+        font: {
+          size: 19
+        },
+        padding: {
+          bottom: 30,
+        }
+      }
     }
   }
 

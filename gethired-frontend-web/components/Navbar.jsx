@@ -1,12 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import PropTypes from 'prop-types';
 import Link from "next/link"
 import Logo from '/public/logo-app.png';
+import ArrowDown from '/public/downarrow.svg';
 
 const Navbar = ({userName}) => {
+  const [isDown, setIsDown] = React.useState(false)
+  const toggleDropdown = () => setIsDown(prev => !prev)
+
   return (
-    <header className="Navbar__wrapper">
+    <header className="Navbar Navbar__wrapper">
       <nav className='Navbar__content'>
         <Link href="/">
           <a>
@@ -19,11 +22,23 @@ const Navbar = ({userName}) => {
         </Link>
 
         {userName && 
-          <div className="navbar__profile">
-            <Link href="/Profile">
-              <a>{userName[0]}</a>
-            </Link>
-          </div>
+          <section className='Navbar__info-section'>
+            <div className="navbar__profile">
+              <h2>{userName[0]}</h2>
+            </div>
+
+            <button onClick={toggleDropdown}>
+              <Image src={ArrowDown} alt=""/>
+            </button>
+
+            {isDown && 
+              <div className='Navbar__dropdown'>
+                <Link href="/Profile">
+                  <a onClick={toggleDropdown}>Settings</a>
+                </Link>
+              </div>
+            }
+          </section>
         }
       </nav>
     </header>
@@ -31,12 +46,3 @@ const Navbar = ({userName}) => {
 };
 
 export default Navbar;
-
-Navbar.propTypes = {
-  // loading: PropTypes.bool,
-  // system: PropTypes.oneOf(['Linux', 'Windows', 'Mac Os']),
-  // system: PropTypes.string,
-  // systemLogo: PropTypes.string,
-  // systemLogo: PropTypes.string,
-  //   checked: PropTypes.bool,
-};
