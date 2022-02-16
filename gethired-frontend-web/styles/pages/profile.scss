@@ -1,5 +1,6 @@
 .Profile{
   font-family: $mainFont;
+  position: relative;
   &__section{
     margin-bottom: 20px;
 
@@ -25,5 +26,38 @@
     button{
       width: 40px;
     }
+  }
+}
+
+@media screen and (min-width: 900px){
+  .Profile{
+    display: flex;
+    justify-content: space-between;
+
+    &__container:nth-child(1){
+      display: initial;
+      display: block;
+      width: 19%;
+      height: fit-content;
+      top: 0;
+      left: 0;
+
+      h2{
+        letter-spacing: 1px;
+      }
+      ul{
+        list-style: none;
+      }
+      li{
+        margin: 15px 0;
+        font-size: 1.1rem;
+      }
+      a{
+        text-decoration: none;
+      }
+    }
+    &__container:nth-child(2){
+      width: 80%;
+    }   
   }
 }
