@@ -1,0 +1,29 @@
+.Profile{
+  font-family: $mainFont;
+  &__section{
+    margin-bottom: 20px;
+
+    h2{
+      font-weight: 100;
+    }
+    label{
+      font-size: 1.1rem;
+      display: block;
+      margin: 9px 0;
+    }
+    input{
+      width: 100%;
+      padding: 9px;
+      font-size: 1.1rem;
+      @extend .cta;
+    }
+  }
+  &__token-container{
+    display: flex;
+    margin-bottom: 15px;
+
+    button{
+      width: 40px;
+    }
+  }
+}

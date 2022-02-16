@@ -19,7 +19,7 @@ export default function Home({ state, setState }) {
   }
 
   return(
-    <main className="Main__wrapper">
+    <section className="Main__wrapper">
       <Head>
         <title>GetHired | Code tracker</title>
         <meta
@@ -67,6 +67,6 @@ export default function Home({ state, setState }) {
           </div>
         : <MainSkeleton />
       }
-    </main>
+    </section>
   )
 }

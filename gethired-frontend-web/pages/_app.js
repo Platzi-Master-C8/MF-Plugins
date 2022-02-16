@@ -11,7 +11,8 @@ function MyApp({ Component, pageProps }) {
     lastTracking: null,
     totalTime: null,
     error: false,
-    name: ""
+    name: "",
+    email: ""
   });
 
   React.useEffect(async () => {
@@ -28,6 +29,7 @@ function MyApp({ Component, pageProps }) {
         languages: Data.languages,
         totalTime: Data.totalDevelopment,
         name: Data.name,
+        email: Data.email,
         token: Data.key
       }))
     }

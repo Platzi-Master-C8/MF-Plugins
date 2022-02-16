@@ -20,6 +20,16 @@ body {
   font-family: $mainFont;
   color: $colorContrastTwo;
 }
+.wrapper{
+  width: 90%;
+  max-width: 1100px;
+  margin: 24px auto;
+  padding-bottom: 30px;
+}
+.cta{
+  background-color: #F8F8F8;
+  border: 1px solid #555BFF;
+}
 
 
 @import './components/PluginStatus.scss';
@@ -45,6 +55,5 @@ body {
 @import 'containers/OperativeSystem.scss';
 
 
-@import './pages/adminView.scss';
 @import './pages/home.scss';
-@import './pages/step.scss';
+@import './pages/profile.scss';
