@@ -11,10 +11,8 @@ export const UserMain = ({ userName, currentToken }) => {
     <section className="userMain">
       <article className="userMain-container">
         <h2>Welcome back, <span>{userName}</span></h2>
-        <p>Your current token is: {currentToken}</p>
+        <p>The only real way to improve is comparing yourself overtime</p>
       </article>
-
-      <Button name="Get New Token"/>
     </section>
   )
 }
