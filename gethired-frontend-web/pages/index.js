@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import Select from 'react-select';
 // components
 import { MainSkeleton } from '../components/MainSkeleton';
 import PluginStatus from '../components/PluginStatus';
@@ -7,14 +8,17 @@ import { BarChart } from '../containers/BarChart/BarChart';
 import { ChartHalfDoughtnut } from '../containers/ChartHalfDoughtnut/ChartHalfDoughtnut';
 import { ChartPie } from '../containers/ChartPie/ChartPie';
 import { UserMain } from '../containers/UserMain';
-// env variables
-const API = process.env.API;
+
+const options = [
+  { value: 'pie-chart', label: 'Pie Chart' },
+  { value: 'bar-chart', label: 'Bar Chart' },
+];
 
 export default function Home({ state, setState }) {
-  const handleChange = (e) => {
+  const handleChange = (option) => {
     setState((prev) => ({
       ...prev,
-      chartType: e.target.value,
+      chartType: option,
     }));
   }
 
@@ -41,19 +45,17 @@ export default function Home({ state, setState }) {
               <ChartHalfDoughtnut time={state.totalTime} lastTracking={state.lastTracking} />
             </section>
 
-            <section className="Main__chart-section" onChange={handleChange}>
+            <section className="Main__chart-section">
               <article className="chart-section__header">
                 <h2>Languages statistics</h2>
-                <select name="charts-type" defaultValue={state.chartType}>
-                  <option className="chart-section__option" value="pie-chart">
-                    Pie Chart
-                  </option>
-                  <option className="chart-section__option" value="bar-chart">
-                    Bar Chart
-                  </option>
-                </select>
+                <Select
+                  className='chart-section__select'
+                  defaultValue={state.chartType}
+                  options={options}
+                  onChange={handleChange}
+                />
               </article>
-              {state.chartType === 'bar-chart' ? (
+              {state.chartType.value === 'bar-chart' ? (
                 <BarChart usedLanguages={state.languages} />
               ) : (
                 <ChartPie usedLanguages={state.languages} />

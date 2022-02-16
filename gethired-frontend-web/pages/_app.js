@@ -6,7 +6,7 @@ import { getData } from "../utils/getData";
 
 function MyApp({ Component, pageProps }) {
   const [globalState, setGlobalState] = React.useState({
-    chartType: 'pie-chart',
+    chartType: { value: 'pie-chart', label: 'Pie Chart' },
     languages: null,
     lastTracking: null,
     totalTime: null,

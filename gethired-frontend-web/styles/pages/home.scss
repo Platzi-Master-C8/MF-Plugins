@@ -16,14 +16,10 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    select{
-      padding: 9px;
-      font-size: 16px;
-      margin-bottom: 15px;
+    .chart-section__select{
+      font-family: $mainFont;
+      margin-bottom: 10px;
     }
-    // .chart-section__option{
-    //   padding: 9px;
-    // }
   }
   h2{
     font-family: $secondaryFont;
