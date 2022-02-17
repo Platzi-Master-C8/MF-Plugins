@@ -37,7 +37,7 @@ export default function Home({ state, setState }) {
           <React.Fragment>
             <section className="Main__header">
               <PluginStatus date={state.lastTracking} />
-              <UserMain userName={user.name} currentToken={state.token} />
+              <UserMain userName={user.name} />
             </section>
 
             <section className="Main__chart-section">

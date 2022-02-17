@@ -40,6 +40,9 @@ const Navbar = ({userName}) => {
                 <Link href="/settings">
                   <a onClick={toggleDropdown}>Settings</a>
                 </Link>
+                <Link href="/api/auth/logout">
+                  <a onClick={toggleDropdown}>Log out</a>
+                </Link>
               </div>
             }
           </section>

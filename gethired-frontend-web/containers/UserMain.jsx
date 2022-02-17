@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-export const UserMain = ({ userName, currentToken }) => {
+export const UserMain = ({ userName }) => {
   userName = userName.split(" ")[0]
 
   return (
@@ -14,7 +14,6 @@ export const UserMain = ({ userName, currentToken }) => {
     </section>
   )
 }
-
 
 UserMain.propTypes = {
     userName: PropTypes.string,

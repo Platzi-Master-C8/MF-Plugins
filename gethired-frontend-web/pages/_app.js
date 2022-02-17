@@ -30,7 +30,6 @@ function MyApp({ Component, pageProps }) {
         lastTracking: dateRegExp.exec(Data.lastTracking)[0],
         languages: Data.languages,
         totalTime: Data.totalDevelopment,
-        name: Data.name,
         token: Data.key
       }))
     }
@@ -38,7 +37,7 @@ function MyApp({ Component, pageProps }) {
 
   return(
     <UserProvider>
-      <Layout userName={globalState.name}>
+      <Layout>
         <Component
           state={globalState}
           setState={setGlobalState}

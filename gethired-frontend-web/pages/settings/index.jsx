@@ -5,10 +5,13 @@ import Image from 'next/image';
 import visible from "../../public/visible.svg";
 import hidden from '/public/hidden.svg';
 import Head from "next/head";
+// auth
+import { useUser } from '@auth0/nextjs-auth0';
 
 export default function Settings({ state }){
   const [isVisible, setIsVisible] = React.useState(false)
   const handleClick = () => setIsVisible(prev => !prev)
+  const {user, isLoading} = useUser()
 
   if(state){
     return(
@@ -45,15 +48,12 @@ export default function Settings({ state }){
             <Button name="Add a picture"/>
     
             <div>
-              <label htmlFor="firstName">First Name</label>
-              <input type="text" id="firstName" defaultValue={state.name} />
-    
-              <label htmlFor="lastName">Last Name</label>
-              <input type="text" id="lastName" />
+              <label htmlFor="firstName">Full Name</label>
+              <input type="text" id="firstName" defaultValue={!isLoading && user.name} />
             </div>
     
             <label htmlFor="">Email</label>
-            <input type="email" defaultValue={state.email} />
+            <input type="email" defaultValue={!isLoading && user.email} />
     
           </section>
     
