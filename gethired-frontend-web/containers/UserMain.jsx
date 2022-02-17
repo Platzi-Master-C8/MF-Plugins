@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '../components/Button/Button';
 import 'react-loading-skeleton/dist/skeleton.css';
-
 
 export const UserMain = ({ userName, currentToken }) => {
   userName = userName.split(" ")[0]

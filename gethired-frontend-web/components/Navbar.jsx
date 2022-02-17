@@ -3,6 +3,9 @@ import Image from 'next/image';
 import Link from "next/link"
 import Logo from '/public/logo-app.png';
 import ArrowDown from '/public/downarrow.svg';
+// react hooks
+import { useRouter } from 'next/router';
+import { Button } from './Button/Button';
 
 const Navbar = ({userName}) => {
   const [isDown, setIsDown] = React.useState(false)
@@ -20,8 +23,9 @@ const Navbar = ({userName}) => {
             </article>
           </a>
         </Link>
-
-        {userName && 
+        {useRouter().pathname === "/" ?
+          <Button name="Log in" isLink={true} />
+        : userName && 
           <section className='Navbar__info-section'>
             <div className="navbar__profile">
               <h2>{userName[0]}</h2>
@@ -33,7 +37,7 @@ const Navbar = ({userName}) => {
 
             {isDown && 
               <div className='Navbar__dropdown'>
-                <Link href="/Profile">
+                <Link href="/settings">
                   <a onClick={toggleDropdown}>Settings</a>
                 </Link>
               </div>

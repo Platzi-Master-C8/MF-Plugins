@@ -1,8 +1,11 @@
 import React from "react";
 import Layout from '../components/Layout';
 import { dateRegExp } from "../constants";
-import '../styles/globals.scss'
 import { getData } from "../utils/getData";
+// css
+import '../styles/globals.scss'
+// auth0
+import { UserProvider } from '@auth0/nextjs-auth0';
 
 function MyApp({ Component, pageProps }) {
   const [globalState, setGlobalState] = React.useState({
@@ -11,7 +14,6 @@ function MyApp({ Component, pageProps }) {
     lastTracking: null,
     totalTime: null,
     error: false,
-    name: "",
     email: ""
   });
 
@@ -29,20 +31,21 @@ function MyApp({ Component, pageProps }) {
         languages: Data.languages,
         totalTime: Data.totalDevelopment,
         name: Data.name,
-        email: Data.email,
         token: Data.key
       }))
     }
   }, []);
 
   return(
-    <Layout userName={globalState.name}>
-      <Component
-        state={globalState}
-        setState={setGlobalState}
-        {...pageProps} 
-      />
-    </Layout>
+    <UserProvider>
+      <Layout userName={globalState.name}>
+        <Component
+          state={globalState}
+          setState={setGlobalState}
+          {...pageProps} 
+        />
+      </Layout>
+    </UserProvider>
   ) 
 }
 

@@ -6,7 +6,7 @@ import visible from "../../public/visible.svg";
 import hidden from '/public/hidden.svg';
 import Head from "next/head";
 
-export default function Profile({ state }){
+export default function Settings({ state }){
   const [isVisible, setIsVisible] = React.useState(false)
   const handleClick = () => setIsVisible(prev => !prev)
 
