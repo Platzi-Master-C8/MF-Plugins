@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import Select from 'react-select';
+import Router from 'next/router';
 // constants
 import { options } from "../../constants";
 // components
@@ -20,7 +21,13 @@ export default function Home({ state, setState }) {
       chartType: option,
     }));
   }
-  const { user } = useUser();
+  const { user, isLoading } = useUser();
+
+  if(!isLoading){
+    if(!user){
+      Router.push("/")
+    }
+  }
 
   return(
     <section className="Main__wrapper">

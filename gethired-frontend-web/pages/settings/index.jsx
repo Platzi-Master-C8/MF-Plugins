@@ -1,10 +1,13 @@
 import React from "react";
+// next
 import Link from "next/link";
-import { Button } from "../../components/Button/Button";
+import Router from "next/router";
 import Image from 'next/image';
+import Head from "next/head";
+
+import { Button } from "../../components/Button/Button";
 import visible from "../../public/visible.svg";
 import hidden from '/public/hidden.svg';
-import Head from "next/head";
 // auth
 import { useUser } from '@auth0/nextjs-auth0';
 
@@ -12,6 +15,14 @@ export default function Settings({ state }){
   const [isVisible, setIsVisible] = React.useState(false)
   const handleClick = () => setIsVisible(prev => !prev)
   const {user, isLoading} = useUser()
+
+  // console.log(String(user.picture))
+
+  if(!isLoading){
+    if(!user){
+      Router.push("/")
+    }
+  }
 
   if(state){
     return(
@@ -44,12 +55,21 @@ export default function Settings({ state }){
         <section className="Profile__container">
           <section className="Profile__section" id="Profile">
             <h2>#Profile</h2>
+            <Image 
+              src={user.picture}
+              alt=""
+              width={200}
+              height={200}
+            />
             <label>Profile Picture</label>
             <Button name="Add a picture"/>
     
             <div>
-              <label htmlFor="firstName">Full Name</label>
-              <input type="text" id="firstName" defaultValue={!isLoading && user.name} />
+              <label htmlFor="firstName">First Name</label>
+              <input type="text" id="firstName" defaultValue={!isLoading && user.given_name} />
+
+              <label htmlFor="lastName">Last Name</label>
+              <input type="text" id="lastName" defaultValue={!isLoading && user.family_name} />
             </div>
     
             <label htmlFor="">Email</label>

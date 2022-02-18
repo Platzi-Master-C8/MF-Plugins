@@ -2,6 +2,9 @@ const path = require('path')
 const Dotenv = require("dotenv-webpack")
 
 module.exports = {
+  images: {
+    domains: ["media-exp1.licdn.com"]
+  },
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
