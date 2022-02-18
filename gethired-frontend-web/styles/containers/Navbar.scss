@@ -5,6 +5,15 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid $colorContrastOne;
+
+  &__dropdown-item{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    & > span{
+      width: 20px;
+    }
+  }
   &__dropdown{
     position: absolute;
     top: 125%;

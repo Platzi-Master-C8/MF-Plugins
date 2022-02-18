@@ -15,13 +15,13 @@ import { UserMain } from '../../containers/UserMain';
 import { useUser } from '@auth0/nextjs-auth0';
 
 export default function Home({ state, setState }) {
+  const { user, isLoading } = useUser();
   const handleChange = (option) => {
     setState((prev) => ({
       ...prev,
       chartType: option,
     }));
   }
-  const { user, isLoading } = useUser();
 
   if(!isLoading){
     if(!user){
