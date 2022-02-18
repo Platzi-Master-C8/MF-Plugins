@@ -17,9 +17,10 @@
     font-family: $mainFont;
     z-index: 1;
     a{
+      letter-spacing: 0.5px;
       width: 100%;
       display: block;
-      padding: 3px 9px;
+      padding: 9px;
     }
   }
   
@@ -31,12 +32,10 @@
     & > button{
       background-color: transparent;
       border: none;
+      margin-left: 5px;
       & > span{
-        width: 16px !important;
+        width: 15px !important;
       }
-    }
-    & > div{
-      margin-right: 5px;
     }
   }
 
