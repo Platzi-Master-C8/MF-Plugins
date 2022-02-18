@@ -55,14 +55,23 @@ export default function Settings({ state }){
         <section className="Profile__container">
           <section className="Profile__section" id="Profile">
             <h2>#Profile</h2>
-            <Image 
-              src={user.picture}
-              alt=""
-              width={200}
-              height={200}
-            />
             <label>Profile Picture</label>
-            <Button name="Add a picture"/>
+            {user.picture ? 
+              <div className="Profile__picture">
+                <Image 
+                  src={user.picture}
+                  alt=""
+                  width={200}
+                  height={200}
+                />
+
+                <div>
+                  <Button name="Change Picture"/>
+                  <Button name="Remove Picture"/>
+                </div>
+              </div>
+              : <Button name="Add a picture"/>
+            }
     
             <div>
               <label htmlFor="firstName">First Name</label>

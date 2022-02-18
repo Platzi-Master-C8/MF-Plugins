@@ -4,6 +4,16 @@
   &__container:nth-child(1){
     display: none;
   }
+
+  &__picture{
+    text-align: center;
+    padding-block: 10px;
+
+    button{
+      margin-block: 5px;
+    }
+  }
+
   &__section{
     margin-bottom: 20px;
 
@@ -36,6 +46,16 @@
   .Profile{
     display: flex;
     justify-content: space-between;
+
+    &__picture{
+      display: flex;
+      div{
+        margin-left: 15px;
+      }
+      button{
+        display: block;
+      }
+    }
 
     &__container:nth-child(1){
       display: initial;
