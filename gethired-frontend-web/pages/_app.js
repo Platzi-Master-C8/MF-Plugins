@@ -16,27 +16,29 @@ function MyApp({ Component, pageProps }) {
     error: false,
     email: ""
   });
-
+  
   React.useEffect(async () => {
-    setGlobalState(prev => ({
-      ...prev,
-      error: true
-    }))
-    // const Data = await getData()
-    // if(typeof Data === 'string'){
-    //   setGlobalState(prev => ({
-    //     ...prev,
-    //     error: true
-    //   }))
-    // }else{
-    //   setGlobalState(prev => ({
-    //     ...prev,
-    //     lastTracking: dateRegExp.exec(Data.lastTracking)[0],
-    //     languages: Data.languages,
-    //     totalTime: Data.totalDevelopment,
-    //     token: Data.key
-    //   }))
-    // }
+    // setGlobalState(prev => ({
+    //   ...prev,
+    //   error: true
+    // }))
+
+    console.log()
+    const Data = await getData()
+    if(typeof Data === 'string'){
+      setGlobalState(prev => ({
+        ...prev,
+        error: true
+      }))
+    }else{
+      setGlobalState(prev => ({
+        ...prev,
+        lastTracking: dateRegExp.exec(Data.lastTracking)[0],
+        languages: Data.languages,
+        totalTime: Data.totalDevelopment,
+        token: Data.key
+      }))
+    }
 
   }, []);
 

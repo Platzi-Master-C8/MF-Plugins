@@ -9,6 +9,7 @@ const Layout = ({ children }) => {
     userName = user ? user.name : "";
   }
 
+
   return(
     <React.Fragment>
       <Navbar userName={userName} />
