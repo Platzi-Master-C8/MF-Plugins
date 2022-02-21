@@ -5,6 +5,8 @@ import { setDateFormat } from '../../utils/setDateFormat';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const ChartHalfDoughtnut = ({ time, lastTracking }) => {
+  const percentage = Math.round((time / time) * 100)
+
   lastTracking = setDateFormat(String(new Date()), true)
 
   const data = {
@@ -12,7 +14,7 @@ export const ChartHalfDoughtnut = ({ time, lastTracking }) => {
     datasets: [
       {
         label: 'time develop',
-        data: [0, 100],
+        data: [percentage, percentage - 100],
         backgroundColor: ['rgba(85,91,255,1)', 'rgba(85,91,255,0.1)'],
         borderWidth: 0,
       },
@@ -44,7 +46,7 @@ export const ChartHalfDoughtnut = ({ time, lastTracking }) => {
           <div className="donnutChart">
             <Doughnut data={data} options={options} />
           </div>
-          <p className="percent">0%</p>
+          <p className="percent">{percentage}%</p>
         </article>
         <p className="average">
           Daily Average: <span>{time} mins</span>

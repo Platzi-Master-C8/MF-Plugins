@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   
   React.useEffect(async () => {
     const Data = await getData()
-    // console.log(Data)
+    console.log(Data)
     if(Data === "error"){
       setGlobalState(prev => ({
         ...prev,
@@ -28,6 +28,8 @@ function MyApp({ Component, pageProps }) {
     }else{
       setGlobalState(prev => ({
         ...prev,
+        lastTracking: dateRegExp.exec(Data.lastTracking)[0] || null,
+        totalTime: Data.totalDevelopment,
         languages: Data.languages,
         token: Data.key
       }))
