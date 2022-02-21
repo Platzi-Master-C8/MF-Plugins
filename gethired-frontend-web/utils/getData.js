@@ -4,23 +4,6 @@ const API = process.env.API
 
 async function getData() {
 
-  // try {
-  //   const userResponse = await fetch(
-  //     "https://ms-plugins.herokuapp.com/api/v1/users",
-  //     options
-  //   );
-  //   // getting userData (email, name, id, token)
-  //   const userData = await userResponse.json();
-  //   // getting statistics
-  //   const statisticsResponse = await fetch(API, options);
-  //   const statisticsData = await statisticsResponse.json();
-
-  //   return {...statisticsData, ...userData}
-  // } catch (error) {
-  //   return "error"
-  // }
-
-
   let options = {
     headers: {
         Authorization: "Bearer"
@@ -33,16 +16,34 @@ async function getData() {
       const userToken = await userTokenResponse.json()
       options.headers.Authorization = `Bearer ${userToken.accessToken}`
 
-      // console.log(userToken)
-
-      const userResponse = await fetch("https://ms-plugins.herokuapp.com/api/v1/users", options)
-      const userData = await userResponse.json()
-      const statisticsResponse = await fetch(`https://ms-plugins.herokuapp.com/api/v1/users/${userData._id}/statistics`, options)
-      const statisticsData = await statisticsResponse.json()
-
-      console.log(userData, statisticsData)
-      return {...statisticsData, ...userData}
-      // return 'trying to get a token'
+      let userData
+      // get user data
+      const getUserResponse = await fetch("https://ms-plugins.herokuapp.com/api/v1/users", options)
+      const getUserData = await getUserResponse.json()
+      userData = getUserData
+      console.log(userData, userToken)
+      if(userData.error) {
+        // create user data
+        // console.log('error')
+        const createUserResponse = await fetch("https://ms-plugins.herokuapp.com/api/v1/users", {
+          ...options,
+          method: 'POST',
+        })
+        const createUserData = await createUserResponse.json() 
+        userData = createUserData
+      }
+      
+      let statisticsData
+      // get statistics of a user
+      const getStatisticsResponse = await fetch(`https://ms-plugins.herokuapp.com/api/v1/users/${userData._id}/statistics`, options)
+      const getStatisticsData = await getStatisticsResponse.json()
+      statisticsData = getStatisticsData
+      if(statisticsData.error) {
+        statisticsData = []
+      }
+      
+      
+      return {...statisticsData,  ...userData}
   } catch (error) {
       console.error(error)
   }

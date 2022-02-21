@@ -10,7 +10,7 @@ import { getAccessToken, getSession } from '@auth0/nextjs-auth0';
 // }
 
 
-export default async(req, res) => {
+const users = async(req, res) => {
   try {
     const session = await getSession(req, res)
     const accessToken = session.idToken 
@@ -23,3 +23,5 @@ export default async(req, res) => {
   }
   
 }
+
+export default users
