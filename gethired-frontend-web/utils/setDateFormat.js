@@ -1,4 +1,8 @@
-export const setDateFormat = (date) => {
+export const setDateFormat = (date, isToday) => {
+  if(isToday){
+    return /^[\w\s]{8,10}/.exec(date)[0]
+  }
+
   date = date.split("-")
   date[2] = String(date[2])
   const lastNumber = date[2][date[2].length - 1]

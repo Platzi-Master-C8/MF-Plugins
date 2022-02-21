@@ -2,20 +2,17 @@ import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { setDateFormat } from '../../utils/setDateFormat';
-
-
-
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const ChartHalfDoughtnut = ({ time, lastTracking }) => {
-  lastTracking = setDateFormat(lastTracking)
+  lastTracking = setDateFormat(String(new Date()), true)
 
   const data = {
     labels: ['Today', 'Daily Average'],
     datasets: [
       {
         label: 'time develop',
-        data: [75, 25],
+        data: [0, 100],
         backgroundColor: ['rgba(85,91,255,1)', 'rgba(85,91,255,0.1)'],
         borderWidth: 0,
       },
@@ -47,7 +44,7 @@ export const ChartHalfDoughtnut = ({ time, lastTracking }) => {
           <div className="donnutChart">
             <Doughnut data={data} options={options} />
           </div>
-          <p className="percent">86%</p>
+          <p className="percent">0%</p>
         </article>
         <p className="average">
           Daily Average: <span>{time} mins</span>

@@ -18,32 +18,20 @@ function MyApp({ Component, pageProps }) {
   });
   
   React.useEffect(async () => {
-    setGlobalState(prev => ({
-      ...prev,
-      error: true
-    }))
-
-    // console.log()
-    // const Data = await getData()
+    const Data = await getData()
     // console.log(Data)
-    // if(typeof Data === 'string'){
-    //   setGlobalState(prev => ({
-    //     ...prev,
-    //     error: true
-    //   }))
-    // }else{
-    //   setGlobalState(prev => ({
-    //     ...prev,
-    //     lastTracking: dateRegExp.exec(Data.lastTracking)[0],
-    //     languages: Data.languages,
-    //     totalTime: Data.totalDevelopment,
-    //     token: Data.key
-    //   }))
-    // }
-
-
-
-
+    if(Data === "error"){
+      setGlobalState(prev => ({
+        ...prev,
+        error: true
+      }))
+    }else{
+      setGlobalState(prev => ({
+        ...prev,
+        languages: Data.languages,
+        token: Data.key
+      }))
+    }
   }, []);
 
   return(
