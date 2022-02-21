@@ -31,7 +31,7 @@ const Navbar = ({userName}) => {
           </a>
         </Link>
         {useRouter().pathname === "/" ?
-          <Button name="Log in" isLink={true} />
+          <Button name="Log in" isLink={true} reference="/api/auth/login" />
         : userName && 
           <section className='Navbar__info-section'>
             {user ?

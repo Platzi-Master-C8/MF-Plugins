@@ -78,7 +78,7 @@ export default function Home({ state, setState }) {
                   <h2>You have not activated the plugin yet.</h2>
                   <p>Download the Plugin for your VSCode text editor</p>
                 </div>
-                <Button name="GET PLUGIN" isLink={true}/>
+                <Button name="GET PLUGIN" isLink={true} reference="https://marketplace.visualstudio.com/VSCode"/>
                 <p>And start receiving statistics</p>
               </section>
             )}
