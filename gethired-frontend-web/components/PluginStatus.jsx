@@ -6,39 +6,31 @@ import Checked from "../public/checked.svg";
 
 
 
-const PluginStatus = ({ date, loading }) => (
-    <React.Fragment>
-        {
-            loading ?
-            <div className="loading2">
-                <Skeleton containerClassName="loading-skeletonContainer" className="skeleton-item"/>
-            </div>
-            :
-            null
-        }
-        {
-            !loading ?
-            <div className="plugin-status">
-                <span className="plugin-status__icon"> 
-                    <Image
-                        alt=""
-                        src={Checked} 
-                        width="20"
-                        height="20"
-                    /> 
-                </span>
+const PluginStatus = ({ date }) => (
+    <div className="plugin-status">
+        <span className="plugin-status__icon"> 
+            <Image
+                alt=""
+                src={Checked} 
+                width="20"
+                height="20"
+            /> 
+        </span>
 
-                <div className="plugin-description">
-                    <h3>Plugin status</h3>
-                    <div>
+        <div className="plugin-description">
+            <h3>Plugin status</h3>
+            <div>
+                {date ? (
+                    <React.Fragment>
                         <p>Last tracking: </p>
                         <p>{ date }</p>
-                    </div>
-                </div>
-            </div>:
-            null
-        }
-    </React.Fragment>
+                    </React.Fragment>
+                ) : (
+                    <p>Plugin has not been activated</p>
+                )}
+            </div>
+        </div>
+    </div>
 );
 
 export default PluginStatus;
