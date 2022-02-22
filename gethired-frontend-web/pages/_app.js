@@ -14,16 +14,24 @@ function MyApp({ Component, pageProps }) {
     lastTracking: null,
     totalTime: null,
     error: false,
+    loadingData: false,
     email: ""
   });
   
   React.useEffect(async () => {
+    setDataState()
+  }, []);
+
+  async function setDataState() {
+    console.log('get data')
     const Data = await getData()
     console.log(Data)
     if(Data === "SyntaxError: Unexpected token s in JSON at position 0"){
       setGlobalState(prev => ({
         ...prev,
         languages: [],
+        error: false,
+
       }))
     }else if(Data.languages){
       setGlobalState(prev => ({
@@ -31,15 +39,18 @@ function MyApp({ Component, pageProps }) {
         lastTracking: Data.languages.length ? dateRegExp.exec(Data.lastTracking)[0] : prev.lastTracking,
         totalTime: Data.totalDevelopment,
         languages: Data.languages,
-        token: Data.key
+        token: Data.key,
+        error: false,
+
       }))
     }else{
       setGlobalState(prev => ({
-        ...prev,
-        error: true
+        // ...prev,
+        error: true,
+
       }))
     }
-  }, []);
+  }
 
   return(
     <UserProvider>
@@ -47,6 +58,7 @@ function MyApp({ Component, pageProps }) {
         <Component
           state={globalState}
           setState={setGlobalState}
+          setDataState={setDataState}
           {...pageProps} 
         />
       </Layout>
