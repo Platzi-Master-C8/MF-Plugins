@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
   async function setDataState() {
     console.log('get data')
     const Data = await getData()
-    console.log(Data)
+    // console.log(Data)
     if(Data === "SyntaxError: Unexpected token s in JSON at position 0"){
       setGlobalState(prev => ({
         ...prev,
