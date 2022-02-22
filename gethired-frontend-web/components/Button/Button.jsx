@@ -2,14 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-export const Button = ({ name, onClick, isLink }) => (
+export const Button = ({ name, onClick, isLink, reference }) => (
   <button 
     className="getToken-button"
     type="button"
     onClick={onClick}
   >
     {isLink ?
-      <a href="/api/auth/login">{name}</a>
+      <a href={reference}>{name}</a>
     : `${name}`}
   </button>
 )

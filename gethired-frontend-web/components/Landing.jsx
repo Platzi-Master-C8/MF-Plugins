@@ -33,7 +33,7 @@ const LandingPage = () => {
               able to see your statistics on the web.
             </p>
           </div>
-          <Button name="Get Plugin Now" />
+          <Button name="Get Plugin Now" isLink={true} reference="https://marketplace.visualstudio.com/VSCode" />
         </div>
       </section>
     </>

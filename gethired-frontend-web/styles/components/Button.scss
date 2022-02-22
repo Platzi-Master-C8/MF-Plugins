@@ -1,11 +1,14 @@
 .getToken-button {
   width: 100%;
-  // width: 165px;
   height: 40px;
   border-radius: 5px;
   font-size: 16px;
   font-family: 'Mulish', sans-serif;
   font-weight: 700;
+  a{
+    font-weight: 700;
+    text-decoration: none;
+  }
   @extend .cta;
 }
 
@@ -13,6 +16,9 @@
   background-color: #555bff;
   color: white;
   cursor: pointer;
+  a{
+    color: white;
+  }
 }
 
 @media (min-width: 900px) {
