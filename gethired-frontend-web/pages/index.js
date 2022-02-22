@@ -3,11 +3,11 @@ import React from 'react';
 import Router from 'next/router';
 import LandingPage from '../components/Landing';
 // auth
-import { useUser, isLoading } from '@auth0/nextjs-auth0';
+import { useUser } from '@auth0/nextjs-auth0';
 import { MainSkeleton } from '../components/MainSkeleton';
 
 export default function Landing() {
-  const { user } = useUser();
+  const { user, isLoading } = useUser();
   if (user) {
     Router.push('/home');
   }

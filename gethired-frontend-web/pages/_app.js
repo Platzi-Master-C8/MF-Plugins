@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
   
   React.useEffect(async () => {
     const Data = await getData()
-    console.log(Data)
+    // console.log(Data)
     if(Data === "SyntaxError: Unexpected token s in JSON at position 0"){
       setGlobalState(prev => ({
         ...prev,
