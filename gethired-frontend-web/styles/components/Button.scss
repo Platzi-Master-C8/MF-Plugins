@@ -1,32 +1,24 @@
 .getToken-button {
-<<<<<<< HEAD
-    width: 100%;
-    // width: 165px;
-    height: 40px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: 'Mulish', sans-serif;
-    font-weight: 700;
-    a{
-        text-decoration: none;
-    }
-    @extend .cta;
-=======
   width: 100%;
-  // width: 165px;
   height: 40px;
   border-radius: 5px;
   font-size: 16px;
   font-family: 'Mulish', sans-serif;
   font-weight: 700;
+  a{
+    font-weight: 700;
+    text-decoration: none;
+  }
   @extend .cta;
->>>>>>> 4b2596b1b67b2927ed392469974ef3e8f84a0895
 }
 
 .getToken-button:hover {
   background-color: #555bff;
   color: white;
   cursor: pointer;
+  a{
+    color: white;
+  }
 }
 
 @media (min-width: 900px) {

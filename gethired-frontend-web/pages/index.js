@@ -3,7 +3,8 @@ import React from 'react';
 import Router from 'next/router';
 import LandingPage from '../components/Landing';
 // auth
-import { useUser } from '@auth0/nextjs-auth0';
+import { useUser, isLoading } from '@auth0/nextjs-auth0';
+import { MainSkeleton } from '../components/MainSkeleton';
 
 export default function Landing() {
   const { user } = useUser();
@@ -17,7 +18,11 @@ export default function Landing() {
         <title>Get Hired | Code tracker</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <LandingPage />
+      {isLoading ? (
+        <MainSkeleton />
+      ) : (
+        <LandingPage />
+      )}
     </section>
   );
 }

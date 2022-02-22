@@ -18,7 +18,7 @@
   &--img {
     width: 50%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     @media (max-width: 900px) {
       margin-top: 1.5rem;
     }
@@ -80,13 +80,16 @@
     }
   }
   &--copy {
+    text-align: start;
     order: 1;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 3rem;
     @media (max-width: 900px) {
+      text-align: center;
       padding-left: 0;
       margin-top: 2rem;
     }

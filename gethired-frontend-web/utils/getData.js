@@ -29,6 +29,7 @@ async function getData() {
       })
       const createUserData = await createUserResponse.json() 
       userData = createUserData
+      return {languages: []}
     }
       
     let statisticsData
