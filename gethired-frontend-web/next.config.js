@@ -3,7 +3,7 @@ const Dotenv = require("dotenv-webpack")
 
 module.exports = {
   images: {
-    domains: ["media-exp1.licdn.com", "pbs.twimg.com"]
+    domains: ["media-exp1.licdn.com", "pbs.twimg.com", "platform-lookaside.fbsbx.com"]
   },
   reactStrictMode: true,
   sassOptions: {
