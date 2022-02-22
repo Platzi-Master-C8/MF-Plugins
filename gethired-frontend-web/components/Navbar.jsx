@@ -18,6 +18,7 @@ const Navbar = ({userName}) => {
   const toggleDropdown = () => setIsDown(prev => !prev)
   const { user, isLoading } = useUser()
 
+
   return (
     <header className="Navbar Navbar__wrapper">
       <nav className='Navbar__content'>
@@ -36,6 +37,7 @@ const Navbar = ({userName}) => {
           <section className='Navbar__info-section'>
             {user ?
               <Image src={user.picture} width={40} height={40} />
+             
             :
               <div className="navbar__profile">
                 <h2>{userName[0]}</h2>

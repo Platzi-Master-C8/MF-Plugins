@@ -14,21 +14,31 @@ import { ChartPie } from '../../containers/ChartPie/ChartPie';
 import { UserMain } from '../../containers/UserMain';
 // auth
 import { useUser } from '@auth0/nextjs-auth0';
+import { useEffect } from 'react';
 
-export default function Home({ state, setState }) {
+export default function Home({ state, setState, setDataState }) {
   const { user, isLoading } = useUser();
+
   const handleChange = (option) => {
     setState((prev) => ({
       ...prev,
       chartType: option,
     }));
   }
-
+ 
   if(!isLoading){
     if(!user){
       Router.push("/")
     }
+    
   }
+  useEffect(() => {
+    setDataState(prev => ({
+      ...prev,
+      error: false,
+      loadingData: true
+    }))
+  }, [])
 
   return(
     <section className="Main__wrapper">
@@ -83,12 +93,22 @@ export default function Home({ state, setState }) {
               </section>
             )}
           </React.Fragment>
-        : state.error ?
-          <div>
-            <h2 className='error'>Error loading content.</h2>
-            <h2 className='error'>Try again later...</h2>
-          </div>
-        : <MainSkeleton />
+        : ''
+     
+      }
+
+      {
+        isLoading ?
+        <MainSkeleton />
+        : ''
+      }
+
+      { 
+        state.error ? 
+         <div>
+           <h2 className='error'>Error loading content.</h2>
+           <h2 className='error'>Try again later...</h2>
+         </div> : ''
       }
     </section>
   )
