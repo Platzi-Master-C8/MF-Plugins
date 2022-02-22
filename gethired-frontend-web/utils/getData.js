@@ -43,7 +43,8 @@ async function getData() {
     
     return {...statisticsData, ...userData}
   } catch (error) {
-    return "error"
+    // SyntaxError: Unexpected token s in JSON at position 0
+    return error
   }
 }
 
