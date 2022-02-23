@@ -18,7 +18,6 @@ const Navbar = ({userName}) => {
   const toggleDropdown = () => setIsDown(prev => !prev)
   const { user, isLoading } = useUser()
 
-
   return (
     <header className="Navbar Navbar__wrapper">
       <nav className='Navbar__content'>
@@ -36,7 +35,7 @@ const Navbar = ({userName}) => {
         : userName && 
           <section className='Navbar__info-section'>
             {user ?
-              <Image src={user.picture} width={40} height={40} />
+              <Image src={user.picture} width={40} height={40} alt="" />
              
             :
               <div className="navbar__profile">
@@ -50,15 +49,15 @@ const Navbar = ({userName}) => {
 
             {isDown && 
               <div className='Navbar__dropdown'>
-                <Link href="/settings">
+                <Link href="/settings" passHref>
                   <div className='Navbar__dropdown-item'>
                     <span className='Navbar__dropdown-icon'>
-                      <Image src={Gear} alt="" width={20} height={20}/>
+                      <Image src={Gear} alt="" width={20} height={20} />
                     </span>
                     <a onClick={toggleDropdown}>Settings</a>
                   </div>
                 </Link>
-                <Link href="/api/auth/logout">
+                <Link href="/api/auth/logout" passHref>
                   <div className='Navbar__dropdown-item'>
                     <span className='Navbar__dropdown-icon'>
                       <Image src={Logout} alt="" width={20}/>

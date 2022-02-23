@@ -18,12 +18,12 @@ function MyApp({ Component, pageProps }) {
     email: ""
   });
   
-  React.useEffect(async () => {
+  React.useEffect(() => {
     setDataState()
   }, []);
 
   async function setDataState() {
-    console.log('get data')
+    // console.log('get data')
     const Data = await getData()
     // console.log(Data)
     if(Data === "SyntaxError: Unexpected token s in JSON at position 0"){
@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }) {
       }))
     }else{
       setGlobalState(prev => ({
-        // ...prev,
+        ...prev,
         error: true,
 
       }))
@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
         <Component
           state={globalState}
           setState={setGlobalState}
-          setDataState={setDataState}
+          // setDataState={setDataState}
           {...pageProps} 
         />
       </Layout>

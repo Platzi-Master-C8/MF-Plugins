@@ -16,7 +16,7 @@ import { UserMain } from '../../containers/UserMain';
 import { useUser } from '@auth0/nextjs-auth0';
 import { useEffect } from 'react';
 
-export default function Home({ state, setState, setDataState }) {
+export default function Home({ state, setState }) {
   const { user, isLoading } = useUser();
 
   const handleChange = (option) => {
@@ -33,12 +33,12 @@ export default function Home({ state, setState, setDataState }) {
     
   }
   useEffect(() => {
-    setDataState(prev => ({
+    setState(prev => ({
       ...prev,
       error: false,
       loadingData: true
     }))
-  }, [])
+  }, [setState])
 
   return(
     <section className="Main__wrapper">

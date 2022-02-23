@@ -71,8 +71,8 @@ export default function Settings({ state }){
                     />
 
                     <div>
-                      <Button name="Change Picture"/>
-                      <Button name="Remove Picture"/>
+                      {/* <Button name="Change Picture"/>
+                      <Button name="Remove Picture"/> */}
                     </div>
                   </div>
                   : <Button name="Add a picture"/>
@@ -110,7 +110,7 @@ export default function Settings({ state }){
                   </button>
                 </div>
         
-                <Button name="Get new token"/>       
+                {/* <Button name="Get new token"/>     */}
               </section>
             </section>
           </React.Fragment>
