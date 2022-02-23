@@ -1,0 +1,86 @@
+.Profile{
+  font-family: $mainFont;
+  position: relative;
+  &__container:nth-child(1){
+    display: none;
+  }
+
+  &__picture{
+    text-align: center;
+    padding-block: 10px;
+
+    button{
+      margin-block: 5px;
+    }
+  }
+
+  &__section{
+    margin-bottom: 20px;
+
+    h2{
+      font-weight: 100;
+    }
+    label{
+      font-size: 1.1rem;
+      display: block;
+      margin: 9px 0;
+    }
+    input{
+      width: 100%;
+      padding: 9px;
+      font-size: 1.1rem;
+      @extend .cta;
+    }
+  }
+  &__token-container{
+    display: flex;
+    margin-bottom: 15px;
+
+    button{
+      width: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 900px){
+  .Profile{
+    display: flex;
+    justify-content: space-between;
+
+    &__picture{
+      display: flex;
+      div{
+        margin-left: 15px;
+      }
+      button{
+        display: block;
+      }
+    }
+
+    &__container:nth-child(1){
+      display: initial;
+      display: block;
+      width: 19%;
+      height: fit-content;
+      top: 0;
+      left: 0;
+
+      h2{
+        letter-spacing: 1px;
+      }
+      ul{
+        list-style: none;
+      }
+      li{
+        margin: 15px 0;
+        font-size: 1.1rem;
+      }
+      a{
+        text-decoration: none;
+      }
+    }
+    &__container:nth-child(2){
+      width: 80%;
+    }   
+  }
+}

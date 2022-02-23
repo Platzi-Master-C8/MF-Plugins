@@ -1,36 +1,91 @@
-.Navbar__wrapper {
+.Navbar{
   width: 100%;
   height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid $colorContrastOne;
+
+  .getToken-button{
+    width: fit-content;
+    padding: 0 12px;
+  }
+  &__dropdown-item{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    & > span{
+      width: 20px;
+    }
+  }
+  &__dropdown{
+    position: absolute;
+    top: 125%;
+    width: fit-content;
+    background-color: white;
+    box-shadow: $mainShadow;
+    right: 0;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-family: $mainFont;
+    z-index: 1;
+    a{
+      letter-spacing: 0.5px;
+      width: 100%;
+      display: block;
+      padding: 9px;
+    }
+  }
+  
+  &__info-section{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > button{
+      background-color: transparent;
+      border: none;
+      margin-left: 5px;
+      & > span{
+        width: 15px !important;
+      }
+    }
+  }
+
+  &__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    a{
+      text-decoration: none;
+    }
+  }
+
+  &__logo{
+    display: flex;
+    align-items: flex-end;
+    img{
+      max-width: 130px;
+    }
+    h2{
+      font-family: $mainFont;
+      font-size: 15px;
+      text-transform: uppercase;
+      margin-left: 5px;
+      padding-bottom: 4px;
+      color: $colorContrastTwo;
+    }
+  }
 }
 .Navbar__content{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-
   .navbar__profile h2{
-    font-size: 20px;
-  }
-}
-.Navbar__logo {
-  display: flex;
-  align-items: flex-end;
-  & img{
-    max-width: 130px;
-  }
-  & > h2{
+    color: white;
     font-family: $mainFont;
-    font-size: 15px;
+    font-size: 20px;
     text-transform: uppercase;
-    margin-left: 5px;
-    padding-bottom: 4px;
-    color: $colorContrastTwo;
   }
 }
 .navbar__profile {

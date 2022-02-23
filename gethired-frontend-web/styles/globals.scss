@@ -1,7 +1,11 @@
 $colorContrastOne: #ae4eff;
 $colorContrastTwo: #401dac;
-$mainGradient: linear-gradient(90deg, rgba(95,100,255,1) 0%, rgba(174,78,255,1) 100%);
-$colorUnactive: #ABA9A9;
+$mainGradient: linear-gradient(
+  90deg,
+  rgba(95, 100, 255, 1) 0%,
+  rgba(174, 78, 255, 1) 100%
+);
+$colorUnactive: #aba9a9;
 $mainFont: 'Lato', sans-serif;
 $secondaryFont: 'Mulish', sans-serif;
 $mainShadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
@@ -14,8 +18,23 @@ $mainShadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
 
 body {
   background-color: white;
+  font-family: 'Mulish', sans-serif;
 }
 
+.error {
+  font-family: $mainFont;
+  color: $colorContrastTwo;
+}
+.wrapper {
+  width: 90%;
+  max-width: 1100px;
+  margin: 24px auto;
+  padding-bottom: 30px;
+}
+.cta {
+  background-color: #f8f8f8;
+  border: 1px solid #555bff;
+}
 
 @import './components/PluginStatus.scss';
 @import './components/Button.scss';
@@ -25,9 +44,7 @@ body {
 @import './components/ChartPieItem.scss';
 @import './components/LoadingMain.scss';
 @import './components/MainSkeleton.scss';
-
-
-
+@import './components/LandingPage.scss';
 @import './containers/UserMain.scss';
 @import './containers/Filter.scss';
 @import './containers/Checkboxes.scss';
@@ -39,7 +56,5 @@ body {
 @import './containers/UserProject.scss';
 @import 'containers/OperativeSystem.scss';
 
-
-@import './pages/adminView.scss';
 @import './pages/home.scss';
-@import './pages/step.scss';
+@import './pages/profile.scss';

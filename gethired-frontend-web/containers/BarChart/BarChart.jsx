@@ -11,7 +11,6 @@ import {
     Legend
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { COLORS } from "../../constants";
 
 ChartJS.register(
     CategoryScale,
@@ -23,14 +22,15 @@ ChartJS.register(
 );
 
 export const BarChart = ({ usedLanguages }) => {
-  const labels = usedLanguages.map( data => data.lan )
-  const values = usedLanguages.map( data => data.time )
+  const labels = usedLanguages.map(lan => lan.lan)
+  const values = usedLanguages.map(lan => lan.time)
+  const colors = usedLanguages.map(lan => lan.color)
   const chartData = {
     labels: labels,
     datasets: [{
       data: values,
       barThickness: 30,
-      backgroundColor: [...COLORS],
+      backgroundColor: colors,
       hoverOffset: 4,
       barPercentage: 0.1
     }]

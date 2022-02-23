@@ -5,19 +5,17 @@ import { ChartPieItem } from '../../components/ChartPieItem/ChartPieItem';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import { COLORS } from '../../constants';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-
-
 export const ChartPie = ({ usedLanguages }) => {
-  const labels = usedLanguages.map( data => data.lan )
-  const values = usedLanguages.map( data => data.time )
+  const labels = usedLanguages.map(data => data.lan)
+  const values = usedLanguages.map(data => data.time)
+  const colors = usedLanguages.map(lan => lan.color)
   const chartData = {
     labels: labels,
     datasets: [{
       data: values,
-      backgroundColor: [...COLORS],
+      backgroundColor: colors,
       hoverOffset: 4
     }]
   };
@@ -27,6 +25,17 @@ export const ChartPie = ({ usedLanguages }) => {
       legend: {
         display: false,
       },
+      title: {
+        display: true,
+        text: 'Time (in minutes)',
+        align: "start",
+        font: {
+          size: 19
+        },
+        padding: {
+          bottom: 30,
+        }
+      }
     }
   }
 
@@ -41,7 +50,7 @@ export const ChartPie = ({ usedLanguages }) => {
           </div>
           <ChartPieListItem 
             usedLanguages={usedLanguages}
-            colors={[...COLORS]}
+            colors={colors}
           />
       </div>
     </React.Fragment>

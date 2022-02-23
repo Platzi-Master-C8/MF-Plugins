@@ -1,0 +1,105 @@
+@mixin text-gradient {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(95, 100, 255, 1) 0%,
+    rgba(174, 78, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Landing__main {
+  margin-top: 40px;
+  display: flex;
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  &--img {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width: 900px) {
+      margin-top: 1.5rem;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  &--copy {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 2.5rem;
+    h2 {
+      font-size: 48px;
+      @media (max-width: 900px) {
+        text-align: center;
+        line-height: 3rem;
+      }
+      @include text-gradient();
+    }
+    span {
+      @media (max-width: 900px) {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0.8rem;
+      }
+      @include text-gradient();
+      font-size: 20px;
+      &:last-child {
+        display: inline-block;
+        width: 100%;
+        text-align: right;
+        font-size: 20px;
+        @media (max-width: 900px) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+.Landing__secondary {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  &--img {
+    order: 2;
+    width: 50%;
+    @media (max-width: 900px) {
+      margin-top: 2rem;
+    }
+    img {
+      width: 150px;
+    }
+  }
+  &--copy {
+    text-align: start;
+    order: 1;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3rem;
+    @media (max-width: 900px) {
+      text-align: center;
+      padding-left: 0;
+      margin-top: 2rem;
+    }
+    h2 {
+      font-size: 28px;
+      @include text-gradient();
+    }
+    p {
+      margin: 1rem 0 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
