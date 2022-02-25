@@ -49,66 +49,61 @@ export default function Home({ state, setState }) {
           content="initial-scale=1.0, width=device-width"
         />
       </Head>
+      
+      {state.error && (
+        <div className='Main__error'>
+          <h2 className='error'>Oops, seems like an error.</h2>
+          <span>Please reload the page or try again later...</span>
+          <Button name="Reload page" onClick={() => Router.reload(window.location.pathname)}/>
+        </div>
+      )}
 
-      {
-        state.languages ?
-          <React.Fragment>
-            <section className="Main__header">
-              <PluginStatus date={state.lastTracking} />
-              <UserMain userName={user.name} />
-            </section>
-
-            {state.languages.length ? (
-              <React.Fragment>
-                <section className="Main__chart-section">
-                  <h2>Time coding today</h2>
-                  <ChartHalfDoughtnut time={state.totalTime} lastTracking={state.lastTracking} />
-                </section>
-
-                <section className="Main__chart-section">
-                  <article className="chart-section__header">
-                    <h2>Languages statistics</h2>
-                    <Select
-                      className='chart-section__select'
-                      defaultValue={state.chartType}
-                      options={options}
-                      onChange={handleChange}
-                    />
-                  </article>
-                  {state.chartType.value === 'bar-chart' ? (
-                    <BarChart usedLanguages={state.languages} />
-                  ) : (
-                    <ChartPie usedLanguages={state.languages} />
-                  )}
-                </section>
-              </React.Fragment>
-            ) : (
-              <section className='Main__noStats'>
-                <div>
-                  <h2>You have not activated the plugin yet.</h2>
-                  <p>Download the Plugin for your VSCode text editor</p>
-                </div>
-                <Button name="GET PLUGIN" isLink={true} reference="https://marketplace.visualstudio.com/VSCode"/>
-                <p>And start receiving statistics</p>
-              </section>
-            )}
-          </React.Fragment>
-        : ''
-     
-      }
-
-      {
-        isLoading ?
+      {isLoading && (
         <MainSkeleton />
-        : ''
-      }
+      )}
 
-      { 
-        state.error ? 
-         <div>
-           <h2 className='error'>Error loading content.</h2>
-           <h2 className='error'>Try again later...</h2>
-         </div> : ''
+      {state.languages &&
+        <React.Fragment>
+          <section className="Main__header">
+            <PluginStatus date={state.lastTracking} />
+            <UserMain userName={user.name} />
+          </section>
+
+          {state.languages.length ? (
+            <React.Fragment>
+              <section className="Main__chart-section">
+                <h2>Time coding today</h2>
+                <ChartHalfDoughtnut time={state.totalTime} lastTracking={state.lastTracking} />
+              </section>
+
+              <section className="Main__chart-section">
+                <article className="chart-section__header">
+                  <h2>Languages statistics</h2>
+                  <Select
+                    className='chart-section__select'
+                    defaultValue={state.chartType}
+                    options={options}
+                    onChange={handleChange}
+                  />
+                </article>
+                {state.chartType.value === 'bar-chart' ? (
+                  <BarChart usedLanguages={state.languages} />
+                ) : (
+                  <ChartPie usedLanguages={state.languages} />
+                )}
+              </section>
+            </React.Fragment>
+          ) : (
+            <section className='Main__noStats'>
+              <div>
+                <h2>You have not activated the plugin yet.</h2>
+                <p>Download the Plugin for your VSCode text editor</p>
+              </div>
+              <Button name="GET PLUGIN" isLink={true} reference="https://marketplace.visualstudio.com/VSCode"/>
+              <p>And start receiving statistics</p>
+            </section>
+          )}
+        </React.Fragment>
       }
     </section>
   )
