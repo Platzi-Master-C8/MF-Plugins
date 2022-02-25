@@ -8,6 +8,26 @@
   -webkit-text-fill-color: transparent;
 }
 
+.Landing__return{
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  display: block;
+  width: fit-content;
+  padding: 9px;
+  background-color: white;
+  border: 3px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+  -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+  border-image: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%);
+  border-image-slice: 1;
+
+  @media (min-width: 1200px) {
+    left: 36px;
+    bottom: 36px;
+  }
+}
+
 .Landing__main {
   margin-top: 40px;
   display: flex;
