@@ -1,15 +1,20 @@
 import React from 'react';
+
 // next hooks
 import Image from 'next/image';
 import Link from "next/link"
 import { useRouter } from 'next/router';
+
 // icons/imgs
 import Logo from '/public/logo-app.png';
 import ArrowDown from '/public/downarrow.svg';
 import Gear from '/public/settings.svg';
 import Logout from '/public/logout.svg';
+import ArrowLeft from '/public/arrow-left.svg';
+
 // components
 import { Button } from './Button/Button';
+
 // auth
 import { useUser } from '@auth0/nextjs-auth0';
 
@@ -63,6 +68,14 @@ const Navbar = ({userName}) => {
                       <Image src={Logout} alt="" width={20}/>
                     </span>
                     <a onClick={toggleDropdown}>Log out</a>
+                  </div>
+                </Link>
+                <Link href="https://mf-social-media-test.vercel.app/" passHref>
+                  <div className='Navbar__dropdown-item'>
+                    <span className='Navbar__dropdown-icon'>
+                      <Image src={ArrowLeft} alt="" width={20}/>
+                    </span>
+                    <a onClick={toggleDropdown}>Return</a>
                   </div>
                 </Link>
               </div>
