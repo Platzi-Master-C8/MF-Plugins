@@ -6,6 +6,20 @@
     padding-bottom: 30px;  
   }
 
+  &__error{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span{
+      font-size: 19px;
+    }
+    *{
+      margin-block: 10px;
+    }
+  }
+
   &__header{
     width: 100%;
     display: flex;

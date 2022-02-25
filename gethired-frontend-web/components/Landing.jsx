@@ -1,7 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+
 import pcImg from '../public/images/pc_landing.png';
 import graphImg from '../public/images/graph_landing.png';
+import ArrowLeft from "../public/arrow-left.svg";
+
 import { Button } from '../components/Button/Button';
 
 const LandingPage = () => {
@@ -36,6 +39,10 @@ const LandingPage = () => {
           <Button name="Get Plugin Now" isLink={true} reference="https://marketplace.visualstudio.com/VSCode" />
         </div>
       </section>
+
+      <a href="https://mf-social-media-test.vercel.app/" className='Landing__return'>
+        <Image src={ArrowLeft} alt=""/>
+      </a>
     </>
   );
 };
